@@ -2,30 +2,32 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-  
 <title>Harish Senthilkumar</title>
 
 <style>
-  .profile-pic {
-    width: 160px;
-    height: 160px;
-    border-radius: 50%;
-    object-fit: cover;
-    border: 4px solid white;
-    margin-bottom: 20px;
-    box-shadow: 0px 10px 30px rgba(0,0,0,0.4);
-    transition: transform 0.3s ease;
-}
-
-.profile-pic:hover {
-  transform: scale(1.05);
-}
   body {
     margin: 0;
     font-family: 'Segoe UI', sans-serif;
-    background: #0f172a;
-    color: #e2e8f0;
-    scroll-behavior: smooth;
+    color: white;
+    overflow-x: hidden;
+  }
+
+  /* 🌌 Animated background */
+  body::before {
+    content: "";
+    position: fixed;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(45deg, #2563eb, #9333ea, #06b6d4);
+    background-size: 400% 400%;
+    animation: gradientMove 12s ease infinite;
+    z-index: -1;
+  }
+
+  @keyframes gradientMove {
+    0% {background-position: 0% 50%;}
+    50% {background-position: 100% 50%;}
+    100% {background-position: 0% 50%;}
   }
 
   header {
@@ -34,13 +36,12 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background: linear-gradient(135deg, #2563eb, #9333ea);
+    backdrop-filter: blur(10px);
     text-align: center;
-    animation: fadeIn 1s ease-in;
   }
 
   h1 {
-    font-size: 48px;
+    font-size: 50px;
     margin: 0;
   }
 
@@ -50,40 +51,41 @@
     opacity: 0.9;
   }
 
+  /* 🧊 Glass cards */
   .container {
     max-width: 900px;
     margin: auto;
     padding: 40px 20px;
   }
 
-  h2 {
-    border-left: 4px solid #3b82f6;
-    padding-left: 10px;
-    margin-top: 50px;
-  }
-
   .card {
-    background: #1e293b;
+    background: rgba(255,255,255,0.1);
+    border-radius: 16px;
     padding: 20px;
     margin: 20px 0;
-    border-radius: 12px;
+    backdrop-filter: blur(15px);
     transition: all 0.3s ease;
   }
 
   .card:hover {
-    transform: translateY(-8px);
-    box-shadow: 0px 15px 40px rgba(0,0,0,0.6);
+    transform: translateY(-10px) scale(1.02);
+    box-shadow: 0px 15px 40px rgba(0,0,0,0.4);
+  }
+
+  h2 {
+    margin-top: 50px;
   }
 
   .tags span {
     display: inline-block;
-    background: #334155;
+    background: rgba(255,255,255,0.2);
     margin: 5px;
     padding: 6px 10px;
-    border-radius: 6px;
+    border-radius: 8px;
     font-size: 12px;
   }
 
+  /* 🔗 Buttons */
   .links {
     display: flex;
     gap: 15px;
@@ -92,39 +94,44 @@
 
   .links a {
     padding: 12px 20px;
-    background: linear-gradient(135deg, #3b82f6, #6366f1);
-    color: white;
-    text-decoration: none;
     border-radius: 10px;
-    transition: all 0.3s ease;
+    background: linear-gradient(135deg, #3b82f6, #6366f1);
+    text-decoration: none;
+    color: white;
+    transition: 0.3s;
   }
 
   .links a:hover {
-    transform: scale(1.08);
+    transform: scale(1.1);
     box-shadow: 0px 10px 25px rgba(0,0,0,0.5);
   }
 
+  /* ✨ Fade + slide */
   .fade {
     opacity: 0;
-    transform: translateY(20px);
-    transition: 0.6s;
+    transform: translateY(30px);
+    transition: 0.8s;
   }
 
-  .fade.visible {
+  .fade.show {
     opacity: 1;
     transform: translateY(0);
   }
 
-  footer {
-    text-align: center;
-    padding: 30px;
-    color: #94a3b8;
-    font-size: 14px;
+  /* 👤 Profile image */
+  .profile-pic {
+    width: 160px;
+    height: 160px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 20px;
+    border: 3px solid rgba(255,255,255,0.7);
+    box-shadow: 0px 10px 30px rgba(0,0,0,0.5);
+    transition: 0.3s;
   }
 
-  @keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
+  .profile-pic:hover {
+    transform: scale(1.05);
   }
 
 </style>
@@ -133,7 +140,7 @@
 <body>
 
 <header>
-  <img src="potfoliopic.jpg" alt="Harish Senthilkumar" class="profile-pic">
+  <img src="potfoliopic.jpg" class="profile-pic">
   <h1>Harish Senthilkumar</h1>
   <div id="typing"></div>
 </header>
@@ -141,64 +148,43 @@
 <div class="container">
 
   <h2 class="fade">About</h2>
-  <p class="fade">
-    Applied Data Science student focused on building end-to-end machine learning systems, NLP pipelines, 
-    and scalable AI applications. Interested in data engineering workflows and cloud-based systems using SQL and Azure.
-  </p>
+  <div class="card fade">
+    Building end-to-end machine learning systems, NLP pipelines, and applied AI solutions with focus on scalable data systems and cloud technologies.
+  </div>
 
   <h2 class="fade">Projects</h2>
 
   <div class="card fade">
-    <h3>YouTube AI Video Helper</h3>
-    <p>LLM-powered system for summarization, quizzes, and structured insights.</p>
-    <div class="tags">
-      <span>NLP</span><span>LLM</span><span>AI Systems</span>
-    </div>
+    <h3>YouTube AI Helper</h3>
+    LLM-based system for summarization and structured outputs.
+    <div class="tags"><span>NLP</span><span>LLM</span></div>
   </div>
 
   <div class="card fade">
     <h3>Fake News Detection</h3>
-    <p>End-to-end ML pipeline using TF-IDF and classification models.</p>
-    <div class="tags">
-      <span>Machine Learning</span><span>NLP</span><span>Evaluation</span>
-    </div>
+    ML pipeline using TF-IDF and classification models.
+    <div class="tags"><span>ML</span><span>NLP</span></div>
   </div>
 
   <div class="card fade">
     <h3>Mini AI Web App</h3>
-    <p>AI-powered web app integrating APIs and prompt-based workflows.</p>
-    <div class="tags">
-      <span>AI</span><span>APIs</span><span>System Design</span>
-    </div>
-  </div>
-
-  <div class="card fade">
-    <h3>Weather Application</h3>
-    <p>Real-time data ingestion with API integration and GUI visualization.</p>
-    <div class="tags">
-      <span>Python</span><span>API</span><span>Data Pipelines</span>
-    </div>
+    API-driven AI system for real-time responses.
+    <div class="tags"><span>AI</span><span>APIs</span></div>
   </div>
 
   <h2 class="fade">Skills</h2>
-  <div class="tags fade">
-    <span>Python</span><span>SQL</span><span>Machine Learning</span>
-    <span>NLP</span><span>Pandas</span><span>Scikit-learn</span>
-    <span>Azure</span><span>REST APIs</span>
+  <div class="card fade">
+    Python • SQL • Machine Learning • NLP • Azure • APIs
   </div>
 
   <h2 class="fade">Connect</h2>
   <div class="links fade">
-    <a href="https://www.linkedin.com/in/harishsenthilkumar/" target="_blank">LinkedIn</a>
-    <a href="https://github.com/Harish-Senthilkumar" target="_blank">GitHub</a>
+    <a href="https://www.linkedin.com/in/harishsenthilkumar/">LinkedIn</a>
+    <a href="https://github.com/Harish-Senthilkumar">GitHub</a>
     <a href="mailto:your-email@example.com">Email</a>
   </div>
 
 </div>
-
-<footer>
-  © 2026 Harish Senthilkumar — Machine Learning Engineering Portfolio
-</footer>
 
 <script>
   // Typing effect
@@ -216,17 +202,16 @@
   // Scroll animation
   const elements = document.querySelectorAll(".fade");
 
-  function showOnScroll() {
-    const trigger = window.innerHeight * 0.85;
+  function reveal() {
     elements.forEach(el => {
       const top = el.getBoundingClientRect().top;
-      if (top < trigger) {
-        el.classList.add("visible");
+      if (top < window.innerHeight * 0.85) {
+        el.classList.add("show");
       }
     });
   }
 
-  window.addEventListener("scroll", showOnScroll);
+  window.addEventListener("scroll", reveal);
 </script>
 
 </body>
