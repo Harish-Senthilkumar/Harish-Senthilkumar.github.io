@@ -1,143 +1,195 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Harish Senthilkumar</title>
-  <style>
-    body {
-      font-family: 'Segoe UI', sans-serif;
-      margin: 0;
-      background: #0f172a;
-      color: #e2e8f0;
-    }
+<meta charset="UTF-8">
+<title>Harish Senthilkumar</title>
 
-    header {
-      text-align: center;
-      padding: 60px 20px;
-      background: linear-gradient(135deg, #2563eb, #9333ea);
-      color: white;
-    }
+<style>
+  body {
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background: #0f172a;
+    color: #e2e8f0;
+    scroll-behavior: smooth;
+  }
 
-    h1 {
-      margin: 0;
-      font-size: 40px;
-    }
+  header {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(135deg, #2563eb, #9333ea);
+    text-align: center;
+  }
 
-    h2 {
-      border-bottom: 2px solid #334155;
-      padding-bottom: 5px;
-      margin-top: 40px;
-    }
+  h1 {
+    font-size: 48px;
+    margin: 0;
+  }
 
-    .container {
-      max-width: 900px;
-      margin: auto;
-      padding: 20px;
-    }
+  #typing {
+    font-size: 20px;
+    margin-top: 10px;
+    opacity: 0.9;
+  }
 
-    .card {
-      background: #1e293b;
-      padding: 20px;
-      margin: 15px 0;
-      border-radius: 12px;
-      transition: transform 0.2s, box-shadow 0.2s;
-    }
+  .container {
+    max-width: 900px;
+    margin: auto;
+    padding: 40px 20px;
+  }
 
-    .card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0px 10px 25px rgba(0,0,0,0.5);
-    }
+  h2 {
+    border-left: 4px solid #3b82f6;
+    padding-left: 10px;
+    margin-top: 40px;
+  }
 
-    .tags span {
-      display: inline-block;
-      background: #334155;
-      padding: 5px 10px;
-      margin: 5px;
-      border-radius: 8px;
-      font-size: 12px;
-    }
+  .card {
+    background: #1e293b;
+    padding: 20px;
+    margin: 20px 0;
+    border-radius: 12px;
+    transition: all 0.3s ease;
+  }
 
-    .links a {
-      display: inline-block;
-      margin-right: 10px;
-      padding: 10px 15px;
-      border-radius: 8px;
-      text-decoration: none;
-      color: white;
-      background: #2563eb;
-      transition: background 0.2s;
-    }
+  .card:hover {
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0px 15px 40px rgba(0,0,0,0.6);
+  }
 
-    .links a:hover {
-      background: #1d4ed8;
-    }
+  .tags span {
+    display: inline-block;
+    background: #334155;
+    margin: 5px;
+    padding: 6px 10px;
+    border-radius: 6px;
+    font-size: 12px;
+  }
 
-  </style>
+  .links a {
+    display: inline-block;
+    margin: 10px;
+    padding: 12px 20px;
+    background: #3b82f6;
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+    transition: 0.3s;
+  }
+
+  .links a:hover {
+    background: #1d4ed8;
+    transform: scale(1.05);
+  }
+
+  .fade {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: 0.6s;
+  }
+
+  .fade.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+</style>
 </head>
 
 <body>
 
 <header>
   <h1>Harish Senthilkumar</h1>
-  <p>Machine Learning Engineering • Data Science • Applied AI</p>
+  <div id="typing"></div>
 </header>
 
 <div class="container">
 
-  <h2>About</h2>
-  <p>
-    I am an Applied Data Science student focused on building end-to-end machine learning systems and scalable data-driven applications. 
-    My interests include NLP, AI systems, data pipelines, and cloud-based solutions using SQL and Azure.
+  <h2 class="fade">About</h2>
+  <p class="fade">
+    Applied Data Science student building end-to-end machine learning systems, NLP pipelines, 
+    and applied AI applications. Focused on scalable data workflows and production-ready ML systems.
   </p>
 
-  <h2>Projects</h2>
+  <h2 class="fade">Projects</h2>
 
-  <div class="card">
+  <div class="card fade">
     <h3>YouTube AI Video Helper</h3>
-    <p>AI system for summarizing videos and generating structured insights using LLMs.</p>
+    <p>LLM-powered system for summarization, quizzes, and structured insights.</p>
     <div class="tags">
       <span>NLP</span><span>LLM</span><span>AI Systems</span>
     </div>
   </div>
 
-  <div class="card">
-    <h3>Fake News Detection System</h3>
-    <p>End-to-end ML pipeline using TF-IDF and classification models.</p>
+  <div class="card fade">
+    <h3>Fake News Detection</h3>
+    <p>End-to-end ML pipeline with TF-IDF and classification models.</p>
     <div class="tags">
-      <span>Machine Learning</span><span>NLP</span><span>Feature Engineering</span>
+      <span>Machine Learning</span><span>NLP</span><span>Evaluation</span>
     </div>
   </div>
 
-  <div class="card">
+  <div class="card fade">
     <h3>Mini AI Web App</h3>
-    <p>AI-powered application integrating APIs for real-time responses.</p>
+    <p>Interactive AI system using external APIs and prompt workflows.</p>
     <div class="tags">
       <span>AI</span><span>APIs</span><span>System Design</span>
     </div>
   </div>
 
-  <div class="card">
-    <h3>Weather Data Application</h3>
-    <p>Python app for real-time API data ingestion and GUI visualization.</p>
+  <div class="card fade">
+    <h3>Weather App</h3>
+    <p>Real-time API data ingestion with GUI visualization.</p>
     <div class="tags">
       <span>Python</span><span>API</span><span>Data Pipelines</span>
     </div>
   </div>
 
-  <h2>Technical Skills</h2>
-  <div class="tags">
+  <h2 class="fade">Skills</h2>
+  <div class="tags fade">
     <span>Python</span><span>SQL</span><span>Machine Learning</span>
     <span>NLP</span><span>Pandas</span><span>Scikit-learn</span>
-    <span>Azure</span><span>REST APIs</span>
+    <span>Azure</span><span>APIs</span>
   </div>
 
-  <h2>Connect</h2>
-  <div class="links">
+  <h2 class="fade">Connect</h2>
+  <div class="links fade">
     <a href="https://www.linkedin.com/in/harishsenthilkumar/">LinkedIn</a>
     <a href="https://github.com/Harish-Senthilkumar">GitHub</a>
   </div>
 
 </div>
+
+<script>
+  // Typing effect
+  const text = "Machine Learning Engineering • Data Science • Applied AI";
+  let i = 0;
+  function type() {
+    if (i < text.length) {
+      document.getElementById("typing").innerHTML += text.charAt(i);
+      i++;
+      setTimeout(type, 40);
+    }
+  }
+  type();
+
+  // Scroll animation
+  const elements = document.querySelectorAll(".fade");
+
+  function showOnScroll() {
+    const trigger = window.innerHeight * 0.85;
+    elements.forEach(el => {
+      const top = el.getBoundingClientRect().top;
+      if (top < trigger) {
+        el.classList.add("visible");
+      }
+    });
+  }
+
+  window.addEventListener("scroll", showOnScroll);
+</script>
 
 </body>
 </html>
