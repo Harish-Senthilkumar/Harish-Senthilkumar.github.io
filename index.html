@@ -2,7 +2,6 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<img src="portfoliopic.jpg" alt="Harish Senthilkumar" class="profile-pic">
 <title>Harish Senthilkumar</title>
 
 <style>
@@ -22,6 +21,7 @@
     align-items: center;
     background: linear-gradient(135deg, #2563eb, #9333ea);
     text-align: center;
+    animation: fadeIn 1s ease-in;
   }
 
   h1 {
@@ -44,7 +44,7 @@
   h2 {
     border-left: 4px solid #3b82f6;
     padding-left: 10px;
-    margin-top: 40px;
+    margin-top: 50px;
   }
 
   .card {
@@ -56,7 +56,7 @@
   }
 
   .card:hover {
-    transform: translateY(-8px) scale(1.02);
+    transform: translateY(-8px);
     box-shadow: 0px 15px 40px rgba(0,0,0,0.6);
   }
 
@@ -69,20 +69,24 @@
     font-size: 12px;
   }
 
+  .links {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+  }
+
   .links a {
-    display: inline-block;
-    margin: 10px;
     padding: 12px 20px;
-    background: #3b82f6;
+    background: linear-gradient(135deg, #3b82f6, #6366f1);
     color: white;
     text-decoration: none;
-    border-radius: 8px;
-    transition: 0.3s;
+    border-radius: 10px;
+    transition: all 0.3s ease;
   }
 
   .links a:hover {
-    background: #1d4ed8;
-    transform: scale(1.05);
+    transform: scale(1.08);
+    box-shadow: 0px 10px 25px rgba(0,0,0,0.5);
   }
 
   .fade {
@@ -94,6 +98,18 @@
   .fade.visible {
     opacity: 1;
     transform: translateY(0);
+  }
+
+  footer {
+    text-align: center;
+    padding: 30px;
+    color: #94a3b8;
+    font-size: 14px;
+  }
+
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
   }
 
 </style>
@@ -110,8 +126,8 @@
 
   <h2 class="fade">About</h2>
   <p class="fade">
-    Applied Data Science student building end-to-end machine learning systems, NLP pipelines, 
-    and applied AI applications. Focused on scalable data workflows and production-ready ML systems.
+    Applied Data Science student focused on building end-to-end machine learning systems, NLP pipelines, 
+    and scalable AI applications. Interested in data engineering workflows and cloud-based systems using SQL and Azure.
   </p>
 
   <h2 class="fade">Projects</h2>
@@ -126,7 +142,7 @@
 
   <div class="card fade">
     <h3>Fake News Detection</h3>
-    <p>End-to-end ML pipeline with TF-IDF and classification models.</p>
+    <p>End-to-end ML pipeline using TF-IDF and classification models.</p>
     <div class="tags">
       <span>Machine Learning</span><span>NLP</span><span>Evaluation</span>
     </div>
@@ -134,15 +150,15 @@
 
   <div class="card fade">
     <h3>Mini AI Web App</h3>
-    <p>Interactive AI system using external APIs and prompt workflows.</p>
+    <p>AI-powered web app integrating APIs and prompt-based workflows.</p>
     <div class="tags">
       <span>AI</span><span>APIs</span><span>System Design</span>
     </div>
   </div>
 
   <div class="card fade">
-    <h3>Weather App</h3>
-    <p>Real-time API data ingestion with GUI visualization.</p>
+    <h3>Weather Application</h3>
+    <p>Real-time data ingestion with API integration and GUI visualization.</p>
     <div class="tags">
       <span>Python</span><span>API</span><span>Data Pipelines</span>
     </div>
@@ -152,16 +168,21 @@
   <div class="tags fade">
     <span>Python</span><span>SQL</span><span>Machine Learning</span>
     <span>NLP</span><span>Pandas</span><span>Scikit-learn</span>
-    <span>Azure</span><span>APIs</span>
+    <span>Azure</span><span>REST APIs</span>
   </div>
 
   <h2 class="fade">Connect</h2>
   <div class="links fade">
-    <a href="https://www.linkedin.com/in/harishsenthilkumar/">LinkedIn</a>
-    <a href="https://github.com/Harish-Senthilkumar">GitHub</a>
+    <a href="https://www.linkedin.com/in/harishsenthilkumar/" target="_blank">LinkedIn</a>
+    <a href="https://github.com/Harish-Senthilkumar" target="_blank">GitHub</a>
+    <a href="mailto:your-email@example.com">Email</a>
   </div>
 
 </div>
+
+<footer>
+  © 2026 Harish Senthilkumar — Machine Learning Engineering Portfolio
+</footer>
 
 <script>
   // Typing effect
@@ -189,7 +210,7 @@
     });
   }
 
-  window.addEventListener("scroll", showOnScroll); 
+  window.addEventListener("scroll", showOnScroll);
 </script>
 
 </body>
