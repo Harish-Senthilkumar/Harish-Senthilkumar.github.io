@@ -1,35 +1,35 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="dark">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Harish Senthilkumar | Data Science & Machine Learning</title>
+  <title>Harish Senthilkumar | Data Science & ML Engineer</title>
   
-  <!-- Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
-  <!-- Google Fonts & FontAwesome -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
   <script>
     tailwind.config = {
+      darkMode: 'class',
       theme: {
         extend: {
           fontFamily: {
             sans: ['"Plus Jakarta Sans"', 'sans-serif'],
-            mono: ['"JetBrains Mono"', 'monospace'],
+            mono: ['"Space Mono"', 'monospace'],
           },
           colors: {
-            brand: {
-              50: '#f0fdfa',
-              100: '#ccfbf1',
-              400: '#2dd4bf',
-              500: '#14b8a6',
-              600: '#0d9488',
-              900: '#134e4a',
-              950: '#042f2e',
+            surface: {
+              DEFAULT: '#0b0f17',
+              card: '#111827',
+              border: '#1f2937',
+              hover: '#374151',
+            },
+            accent: {
+              DEFAULT: '#3b82f6',
+              glow: 'rgba(59, 130, 246, 0.15)',
             }
           }
         }
@@ -38,376 +38,280 @@
   </script>
 
   <style>
-    body { font-family: 'Plus Jakarta Sans', sans-serif; }
-    .glass-card {
-      background: rgba(15, 23, 42, 0.65);
-      backdrop-filter: blur(16px);
-      border: 1px solid rgba(255, 255, 255, 0.08);
+    body { font-family: 'Plus Jakarta Sans', sans-serif; background-color: #0b0f17; color: #f3f4f6; }
+    .bento-card {
+      background: #111827;
+      border: 1px solid #1f2937;
+      border-radius: 1.25rem;
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     }
-    .glass-card:hover {
-      border-color: rgba(45, 212, 191, 0.3);
-      box-shadow: 0 10px 30px -10px rgba(13, 148, 136, 0.15);
+    .bento-card:hover {
+      border-color: #3b82f6;
+      box-shadow: 0 10px 30px -10px rgba(59, 130, 246, 0.2);
     }
-    .gradient-text {
-      background: linear-gradient(135deg, #ffffff 0%, #cbd5e1 50%, #2dd4bf 100%);
+    .gradient-header {
+      background: linear-gradient(180deg, #ffffff 0%, #9ca3af 100%);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
     }
   </style>
 </head>
-<body class="bg-slate-950 text-slate-100 antialiased selection:bg-brand-500 selection:text-slate-950 min-h-screen">
+<body class="antialiased selection:bg-blue-500 selection:text-white">
 
-  <!-- Background Mesh Glows -->
-  <div class="fixed inset-0 pointer-events-none z-0 overflow-hidden">
-    <div class="absolute -top-40 -left-40 w-96 h-96 bg-brand-500/10 rounded-full blur-3xl"></div>
-    <div class="absolute top-1/3 -right-40 w-96 h-96 bg-indigo-500/10 rounded-full blur-3xl"></div>
-  </div>
-
-  <!-- Navigation -->
-  <nav class="sticky top-0 z-50 bg-slate-950/80 backdrop-blur-xl border-b border-slate-800/80">
-    <div class="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
+  <!-- Top Navigation Bar -->
+  <header class="sticky top-0 z-50 bg-[#0b0f17]/90 backdrop-blur-md border-b border-gray-800/80">
+    <div class="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
       <div class="flex items-center space-x-3">
-        <span class="w-3 h-3 rounded-full bg-brand-400 animate-pulse"></span>
-        <span class="font-mono font-bold text-slate-100 tracking-tight">harish<span class="text-brand-400">.ml</span></span>
+        <div class="w-8 h-8 rounded-lg bg-blue-600/20 border border-blue-500/30 flex items-center justify-center font-mono text-blue-400 font-bold text-sm">
+          HS
+        </div>
+        <span class="font-bold text-gray-100 tracking-tight text-sm sm:text-base">Harish Senthilkumar</span>
       </div>
-      <div class="hidden sm:flex space-x-8 text-sm font-medium text-slate-400">
-        <a href="#about" class="hover:text-brand-400 transition-colors">About</a>
-        <a href="#roadmap" class="hover:text-brand-400 transition-colors">Roadmap</a>
-        <a href="#projects" class="hover:text-brand-400 transition-colors">Projects</a>
-        <a href="#toolbox" class="hover:text-brand-400 transition-colors">Toolbox</a>
-        <a href="#contact" class="hover:text-brand-400 transition-colors">Contact</a>
-      </div>
-      <a href="mailto:harishsenthilkmr@gmail.com" class="px-4 py-2 rounded-lg bg-brand-500/10 border border-brand-500/30 text-brand-400 hover:bg-brand-500/20 text-xs font-mono font-semibold transition-all">
-        Hire / Contact
+
+      <nav class="hidden md:flex items-center space-x-6 text-xs font-semibold uppercase tracking-wider text-gray-400">
+        <a href="#overview" class="hover:text-blue-400 transition-colors">Overview</a>
+        <a href="#projects" class="hover:text-blue-400 transition-colors">Projects</a>
+        <a href="#stack" class="hover:text-blue-400 transition-colors">Stack</a>
+        <a href="#contact" class="hover:text-blue-400 transition-colors">Contact</a>
+      </nav>
+
+      <a href="mailto:harishsenthilkmr@gmail.com" class="px-4 py-2 rounded-lg bg-blue-600 hover:bg-blue-500 text-white font-semibold text-xs transition-all shadow-md shadow-blue-600/20">
+        Get In Touch
       </a>
     </div>
-  </nav>
+  </header>
 
-  <main class="relative z-10 max-w-6xl mx-auto px-6 space-y-28 pt-12 pb-24">
+  <!-- Main Bento Grid Interface -->
+  <main class="max-w-7xl mx-auto px-6 py-10 space-y-8" id="overview">
 
-    <!-- HERO SECTION -->
-    <section id="about" class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-      <div class="lg:col-span-7 space-y-6">
-        <div class="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-slate-900 border border-slate-800 text-brand-400 text-xs font-mono">
-          <i class="fa-solid fa-code-branch"></i>
-          <span>Data Science &amp; Machine Learning Practitioner</span>
+    <!-- BENTO SECTION 1: HERO & METRICS -->
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-6">
+      
+      <!-- Primary Hero Card (Spans 8 cols) -->
+      <div class="lg:col-span-8 bento-card p-8 sm:p-10 flex flex-col justify-between relative overflow-hidden">
+        <div class="absolute -right-20 -top-20 w-80 h-80 bg-blue-600/10 rounded-full blur-3xl pointer-events-none"></div>
+        
+        <div class="space-y-6 relative z-10">
+          <div class="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-blue-500/10 border border-blue-500/20 text-blue-400 text-xs font-mono font-medium">
+            <span class="w-2 h-2 rounded-full bg-blue-400 animate-pulse"></span>
+            <span>Data Science &amp; Machine Learning</span>
+          </div>
+
+          <h1 class="text-3xl sm:text-5xl font-extrabold tracking-tight leading-tight gradient-header">
+            Building statistical models &amp; data pipelines for real-world impact.
+          </h1>
+
+          <p class="text-gray-400 text-base max-w-2xl leading-relaxed">
+            Data scientist and ML practitioner focused on translating unstructured or complex datasets into actionable predictive algorithms and structured market insights.
+          </p>
         </div>
-        <h1 class="text-4xl sm:text-6xl font-extrabold tracking-tight leading-[1.1] gradient-text">
-          Turning raw datasets into actionable ML pipelines.
-        </h1>
-        <p class="text-slate-400 text-lg leading-relaxed max-w-xl">
-          College student building end-to-end predictive models, statistical exploratory analysis, and clean machine learning workflows using real-world datasets.
-        </p>
 
-        <div class="flex flex-wrap gap-4 pt-2">
-          <a href="#projects" class="px-6 py-3 rounded-xl bg-brand-500 hover:bg-brand-600 text-slate-950 font-bold text-sm transition-all flex items-center space-x-2 shadow-lg shadow-brand-500/20">
-            <span>Explore Featured Projects</span>
-            <i class="fa-solid fa-arrow-down text-xs"></i>
-          </a>
-          <a href="https://github.com/Harish-Senthilkumar" target="_blank" class="px-6 py-3 rounded-xl bg-slate-900 hover:bg-slate-800 border border-slate-800 text-slate-200 font-semibold text-sm transition-all flex items-center space-x-2">
-            <img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/github.svg" class="w-4 h-4 invert" alt="GitHub">
+        <div class="flex flex-wrap gap-4 pt-8 relative z-10">
+          <a href="https://github.com/Harish-Senthilkumar" target="_blank" class="px-5 py-2.5 rounded-lg bg-gray-800 hover:bg-gray-700 border border-gray-700 text-gray-200 text-xs font-mono font-semibold transition-all flex items-center space-x-2">
+            <i class="fa-brands fa-github text-sm"></i>
             <span>GitHub Profile</span>
           </a>
+          <a href="https://www.linkedin.com/in/harishsenthilkumar/" target="_blank" class="px-5 py-2.5 rounded-lg bg-gray-800 hover:bg-gray-700 border border-gray-700 text-gray-200 text-xs font-mono font-semibold transition-all flex items-center space-x-2">
+            <i class="fa-brands fa-linkedin text-sm text-blue-400"></i>
+            <span>LinkedIn</span>
+          </a>
         </div>
       </div>
 
-      <!-- Live Terminal Widget -->
-      <div class="lg:col-span-5">
-        <div class="bg-slate-900 border border-slate-800 rounded-2xl overflow-hidden shadow-2xl">
-          <div class="bg-slate-950 px-4 py-3 border-b border-slate-800 flex items-center justify-between">
-            <div class="flex space-x-2">
-              <span class="w-3 h-3 rounded-full bg-rose-500/80 inline-block"></span>
-              <span class="w-3 h-3 rounded-full bg-amber-500/80 inline-block"></span>
-              <span class="w-3 h-3 rounded-full bg-emerald-500/80 inline-block"></span>
-            </div>
-            <span class="font-mono text-xs text-slate-500">pipeline_status.py</span>
-          </div>
-          <div class="p-5 font-mono text-xs space-y-3 text-slate-300 leading-relaxed">
-            <p class="text-slate-500"># Initializing ML Workflow</p>
-            <p><span class="text-brand-400">import</span> pandas <span class="text-brand-400">as</span> pd</p>
-            <p><span class="text-brand-400">from</span> sklearn.ensemble <span class="text-brand-400">import</span> RandomForestClassifier</p>
-            <div class="pt-2 border-t border-slate-800/80">
-              <p class="text-emerald-400">✓ Dataset: 45,211 rows loaded</p>
-              <p class="text-emerald-400">✓ Accuracy Score: 90.1%</p>
-              <p class="text-cyan-400">✓ ROC-AUC metric: 0.928</p>
-            </div>
-            <div class="bg-slate-950 p-3 rounded-lg border border-slate-800 text-[11px] text-slate-400">
-              <span class="text-amber-400 font-semibold">Primary Feature:</span> Call duration &gt; 300s increases term deposit conversion by <span class="text-brand-400 font-bold">4.3x</span>.
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ROADMAP SECTION -->
-    <section id="roadmap" class="space-y-8 border-t border-slate-900 pt-16">
-      <div>
-        <h2 class="font-mono text-xs font-bold uppercase tracking-widest text-brand-400 mb-2">Technical Evolution</h2>
-        <h3 class="text-2xl font-bold text-slate-100">Learning &amp; Execution Roadmap</h3>
-      </div>
-
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-        <!-- Step 1 -->
-        <div class="glass-card p-6 rounded-2xl relative overflow-hidden">
-          <div class="text-brand-400 font-mono text-xs font-bold mb-3 flex items-center justify-between">
-            <span>01. CORE FOUNDATIONS</span>
-            <span class="px-2 py-0.5 rounded bg-brand-500/10 border border-brand-500/30 text-brand-400">Completed</span>
-          </div>
-          <h4 class="text-lg font-bold text-slate-100 mb-2">Data Structuring &amp; Wrangling</h4>
-          <p class="text-slate-400 text-sm leading-relaxed mb-4">Mastered relational queries in SQL alongside data processing pipelines with Python, Pandas, and NumPy.</p>
-          <div class="flex flex-wrap gap-2">
-            <span class="text-[11px] font-mono bg-slate-900 text-slate-300 px-2.5 py-1 rounded-md border border-slate-800">SQL</span>
-            <span class="text-[11px] font-mono bg-slate-900 text-slate-300 px-2.5 py-1 rounded-md border border-slate-800">Pandas</span>
-            <span class="text-[11px] font-mono bg-slate-900 text-slate-300 px-2.5 py-1 rounded-md border border-slate-800">NumPy</span>
-          </div>
-        </div>
-
-        <!-- Step 2 -->
-        <div class="glass-card p-6 rounded-2xl relative overflow-hidden">
-          <div class="text-brand-400 font-mono text-xs font-bold mb-3 flex items-center justify-between">
-            <span>02. MODELING &amp; STATS</span>
-            <span class="px-2 py-0.5 rounded bg-brand-500/10 border border-brand-500/30 text-brand-400">Completed</span>
-          </div>
-          <h4 class="text-lg font-bold text-slate-100 mb-2">Machine Learning &amp; Viz</h4>
-          <p class="text-slate-400 text-sm leading-relaxed mb-4">Constructed classification algorithms, hypothesis tests, and publication-ready charts using Scikit-Learn and Seaborn.</p>
-          <div class="flex flex-wrap gap-2">
-            <span class="text-[11px] font-mono bg-slate-900 text-slate-300 px-2.5 py-1 rounded-md border border-slate-800">Scikit-Learn</span>
-            <span class="text-[11px] font-mono bg-slate-900 text-slate-300 px-2.5 py-1 rounded-md border border-slate-800">Matplotlib</span>
-            <span class="text-[11px] font-mono bg-slate-900 text-slate-300 px-2.5 py-1 rounded-md border border-slate-800">Seaborn</span>
-          </div>
-        </div>
-
-        <!-- Step 3 -->
-        <div class="glass-card p-6 rounded-2xl relative overflow-hidden">
-          <div class="text-amber-400 font-mono text-xs font-bold mb-3 flex items-center justify-between">
-            <span>03. CLOUD &amp; PIPELINES</span>
-            <span class="px-2 py-0.5 rounded bg-amber-500/10 border border-amber-500/30 text-amber-400">In Progress</span>
-          </div>
-          <h4 class="text-lg font-bold text-slate-100 mb-2">Enterprise Analytics</h4>
-          <p class="text-slate-400 text-sm leading-relaxed mb-4">Expanding into cloud warehousing, dashboard reporting, and orchestrating scalable machine learning models.</p>
-          <div class="flex flex-wrap gap-2">
-            <span class="text-[11px] font-mono bg-slate-900 text-slate-300 px-2.5 py-1 rounded-md border border-slate-800">Power BI</span>
-            <span class="text-[11px] font-mono bg-slate-900 text-slate-300 px-2.5 py-1 rounded-md border border-slate-800">Snowflake</span>
-            <span class="text-[11px] font-mono bg-slate-900 text-slate-300 px-2.5 py-1 rounded-md border border-slate-800">AWS</span>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- FEATURED PROJECTS SECTION -->
-    <section id="projects" class="space-y-8 border-t border-slate-900 pt-16">
-      <div>
-        <h2 class="font-mono text-xs font-bold uppercase tracking-widest text-brand-400 mb-2">Portfolio</h2>
-        <h3 class="text-2xl font-bold text-slate-100">Featured Projects</h3>
-      </div>
-
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+      <!-- Quick Metrics Column (Spans 4 cols) -->
+      <div class="lg:col-span-4 grid grid-cols-1 gap-6">
         
+        <div class="bento-card p-6 flex flex-col justify-between">
+          <div class="text-xs font-mono text-gray-400 uppercase tracking-wider mb-2">Model Performance</div>
+          <div class="text-4xl font-extrabold text-blue-400 font-mono">90.1%</div>
+          <div class="text-xs text-gray-400 mt-2">Target accuracy achieved on UCI telemarketing predictive pipelines.</div>
+        </div>
+
+        <div class="bento-card p-6 flex flex-col justify-between">
+          <div class="text-xs font-mono text-gray-400 uppercase tracking-wider mb-2">Data Processing</div>
+          <div class="text-4xl font-extrabold text-emerald-400 font-mono">55,000+</div>
+          <div class="text-xs text-gray-400 mt-2">Records cleaned, transformed, and evaluated across active projects.</div>
+        </div>
+
+      </div>
+
+    </div>
+
+    <!-- BENTO SECTION 2: FEATURED PROJECTS -->
+    <div class="space-y-6 pt-6" id="projects">
+      <div class="flex items-center justify-between">
+        <div>
+          <span class="text-xs font-mono uppercase tracking-widest text-blue-400 font-bold">Execution</span>
+          <h2 class="text-2xl font-bold text-gray-100">Featured Engineering Projects</h2>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+
         <!-- Project Card 1: Bank Marketing ML -->
-        <div class="glass-card p-8 rounded-2xl flex flex-col justify-between transition-all">
+        <div class="bento-card p-8 flex flex-col justify-between">
           <div class="space-y-4">
-            <div class="flex justify-between items-start">
-              <span class="px-3 py-1 text-xs font-mono font-semibold rounded-full bg-brand-500/10 text-brand-400 border border-brand-500/20">Machine Learning</span>
-              <a href="https://github.com/Harish-Senthilkumar/bank-marketing-ml" target="_blank" class="text-slate-400 hover:text-white transition-colors">
-                <img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/github.svg" class="w-5 h-5 invert" alt="GitHub Repo">
+            <div class="flex justify-between items-center">
+              <span class="px-3 py-1 rounded-full text-xs font-mono bg-blue-500/10 text-blue-400 border border-blue-500/20">Machine Learning</span>
+              <a href="https://github.com/Harish-Senthilkumar/bank-marketing-ml" target="_blank" class="text-gray-400 hover:text-white transition-colors">
+                <i class="fa-brands fa-github text-lg"></i>
               </a>
             </div>
-            <h4 class="text-xl font-bold text-slate-100">Bank Telemarketing Prediction Pipeline</h4>
-            <p class="text-slate-400 text-sm leading-relaxed">
-              Engineered a predictive model on 45,000+ customer records to identify high-converting term deposit leads, minimizing unnecessary outreach costs for sales teams.
+
+            <h3 class="text-xl font-bold text-gray-100">Bank Marketing Predictive Classifier</h3>
+            
+            <p class="text-gray-400 text-sm leading-relaxed">
+              Developed a Scikit-Learn machine learning pipeline to analyze direct telemarketing campaigns. Built model pipelines that predict client subscription probabilities with high accuracy.
             </p>
 
-            <!-- Metrics -->
-            <div class="grid grid-cols-3 gap-3 pt-2">
-              <div class="bg-slate-950 p-3 rounded-xl border border-slate-800/80 text-center">
-                <div class="text-lg font-bold text-brand-400 font-mono">90.1%</div>
-                <div class="text-[10px] text-slate-400 uppercase font-mono mt-0.5">Accuracy</div>
+            <!-- Metrics Bar -->
+            <div class="grid grid-cols-3 gap-2 bg-gray-900/80 p-3 rounded-xl border border-gray-800 text-center font-mono">
+              <div>
+                <div class="text-xs text-gray-500">ACCURACY</div>
+                <div class="text-sm font-bold text-blue-400">90.1%</div>
               </div>
-              <div class="bg-slate-950 p-3 rounded-xl border border-slate-800/80 text-center">
-                <div class="text-lg font-bold text-indigo-400 font-mono">0.928</div>
-                <div class="text-[10px] text-slate-400 uppercase font-mono mt-0.5">ROC-AUC</div>
+              <div>
+                <div class="text-xs text-gray-500">ROC-AUC</div>
+                <div class="text-sm font-bold text-emerald-400">0.928</div>
               </div>
-              <div class="bg-slate-950 p-3 rounded-xl border border-slate-800/80 text-center">
-                <div class="text-lg font-bold text-teal-400 font-mono">4.3x</div>
-                <div class="text-[10px] text-slate-400 uppercase font-mono mt-0.5">Lift Factor</div>
+              <div>
+                <div class="text-xs text-gray-500">LIFT</div>
+                <div class="text-sm font-bold text-purple-400">4.3x</div>
               </div>
             </div>
           </div>
 
-          <div class="pt-6 mt-6 border-t border-slate-800/80 flex items-center justify-between">
-            <div class="flex flex-wrap gap-2">
-              <span class="text-xs font-mono text-slate-400">Python</span> •
-              <span class="text-xs font-mono text-slate-400">Scikit-Learn</span> •
-              <span class="text-xs font-mono text-slate-400">Pandas</span>
+          <div class="pt-6 mt-6 border-t border-gray-800 flex items-center justify-between">
+            <div class="flex space-x-2 text-xs font-mono text-gray-400">
+              <span>Python</span> • <span>Scikit-Learn</span> • <span>Pandas</span>
             </div>
-            <a href="https://github.com/Harish-Senthilkumar/bank-marketing-ml" target="_blank" class="text-xs font-mono font-semibold text-brand-400 hover:text-brand-300 flex items-center space-x-1">
-              <span>View Code</span>
+            <a href="https://github.com/Harish-Senthilkumar/bank-marketing-ml" target="_blank" class="text-xs font-mono font-bold text-blue-400 hover:text-blue-300 flex items-center space-x-1">
+              <span>Source</span>
               <i class="fa-solid fa-arrow-right text-[10px]"></i>
             </a>
           </div>
         </div>
 
-        <!-- Project Card 2: Google Play Store Analysis -->
-        <div class="glass-card p-8 rounded-2xl flex flex-col justify-between transition-all">
+        <!-- Project Card 2: Google Play Store -->
+        <div class="bento-card p-8 flex flex-col justify-between">
           <div class="space-y-4">
-            <div class="flex justify-between items-start">
-              <span class="px-3 py-1 text-xs font-mono font-semibold rounded-full bg-indigo-500/10 text-indigo-400 border border-indigo-500/20">Data Analysis</span>
-              <a href="https://github.com/Harish-Senthilkumar/google-play-store-analysis" target="_blank" class="text-slate-400 hover:text-white transition-colors">
-                <img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/github.svg" class="w-5 h-5 invert" alt="GitHub Repo">
+            <div class="flex justify-between items-center">
+              <span class="px-3 py-1 rounded-full text-xs font-mono bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">Data Analytics</span>
+              <a href="https://github.com/Harish-Senthilkumar/google-play-store-analysis" target="_blank" class="text-gray-400 hover:text-white transition-colors">
+                <i class="fa-brands fa-github text-lg"></i>
               </a>
             </div>
-            <h4 class="text-xl font-bold text-slate-100">Google Play Store Market Exploratory Analysis</h4>
-            <p class="text-slate-400 text-sm leading-relaxed">
-              Cleaned and analyzed 10,000+ app listings to evaluate common industry assumptions regarding application size, user ratings, monetization models, and target audience performance.
+
+            <h3 class="text-xl font-bold text-gray-100">Google Play Store Market Analytics</h3>
+            
+            <p class="text-gray-400 text-sm leading-relaxed">
+              Performed end-to-end data cleansing and exploratory data analysis (EDA) across 10,000+ Android applications to evaluate key market drivers across category, pricing, and content targets.
             </p>
 
-            <!-- Metrics -->
-            <div class="grid grid-cols-3 gap-3 pt-2">
-              <div class="bg-slate-950 p-3 rounded-xl border border-slate-800/80 text-center">
-                <div class="text-lg font-bold text-indigo-400 font-mono">0.066</div>
-                <div class="text-[10px] text-slate-400 uppercase font-mono mt-0.5">Size Correlation</div>
+            <!-- Metrics Bar -->
+            <div class="grid grid-cols-3 gap-2 bg-gray-900/80 p-3 rounded-xl border border-gray-800 text-center font-mono">
+              <div>
+                <div class="text-xs text-gray-500">RECORDS</div>
+                <div class="text-sm font-bold text-emerald-400">10,000+</div>
               </div>
-              <div class="bg-slate-950 p-3 rounded-xl border border-slate-800/80 text-center">
-                <div class="text-lg font-bold text-brand-400 font-mono">4.27</div>
-                <div class="text-[10px] text-slate-400 uppercase font-mono mt-0.5">Paid App Rating</div>
+              <div>
+                <div class="text-xs text-gray-500">PAID RATING</div>
+                <div class="text-sm font-bold text-blue-400">4.27 Avg</div>
               </div>
-              <div class="bg-slate-950 p-3 rounded-xl border border-slate-800/80 text-center">
-                <div class="text-lg font-bold text-emerald-400 font-mono">3x</div>
-                <div class="text-[10px] text-slate-400 uppercase font-mono mt-0.5">Teen Install Gap</div>
+              <div>
+                <div class="text-xs text-gray-500">TEEN GAP</div>
+                <div class="text-sm font-bold text-purple-400">3x Installs</div>
               </div>
             </div>
           </div>
 
-          <div class="pt-6 mt-6 border-t border-slate-800/80 flex items-center justify-between">
-            <div class="flex flex-wrap gap-2">
-              <span class="text-xs font-mono text-slate-400">Python</span> •
-              <span class="text-xs font-mono text-slate-400">Matplotlib</span> •
-              <span class="text-xs font-mono text-slate-400">Seaborn</span>
+          <div class="pt-6 mt-6 border-t border-gray-800 flex items-center justify-between">
+            <div class="flex space-x-2 text-xs font-mono text-gray-400">
+              <span>Python</span> • <span>Matplotlib</span> • <span>Seaborn</span>
             </div>
-            <a href="https://github.com/Harish-Senthilkumar/google-play-store-analysis" target="_blank" class="text-xs font-mono font-semibold text-brand-400 hover:text-brand-300 flex items-center space-x-1">
-              <span>View Code</span>
+            <a href="https://github.com/Harish-Senthilkumar/google-play-store-analysis" target="_blank" class="text-xs font-mono font-bold text-blue-400 hover:text-blue-300 flex items-center space-x-1">
+              <span>Source</span>
               <i class="fa-solid fa-arrow-right text-[10px]"></i>
             </a>
           </div>
         </div>
 
       </div>
-    </section>
+    </div>
 
-    <!-- TECHNICAL TOOLBOX / LOGOS SECTION -->
-    <section id="toolbox" class="space-y-8 border-t border-slate-900 pt-16">
+    <!-- BENTO SECTION 3: TECH STACK GRID -->
+    <div class="space-y-6 pt-6" id="stack">
       <div>
-        <h2 class="font-mono text-xs font-bold uppercase tracking-widest text-brand-400 mb-2">Ecosystem</h2>
-        <h3 class="text-2xl font-bold text-slate-100">Technical Toolbox</h3>
+        <span class="text-xs font-mono uppercase tracking-widest text-blue-400 font-bold">Capabilities</span>
+        <h2 class="text-2xl font-bold text-gray-100">Technical Stack</h2>
       </div>
 
-      <div class="grid grid-cols-2 sm:grid-cols-4 gap-4">
+      <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4">
         
-        <!-- Python -->
-        <div class="glass-card p-4 rounded-xl flex items-center space-x-3">
-          <img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/python.svg" class="w-7 h-7" alt="Python" style="filter: invert(72%) sepia(85%) saturate(362%) hue-rotate(9deg) brightness(98%) contrast(92%);">
-          <div>
-            <div class="font-bold text-sm text-slate-200">Python</div>
-            <div class="text-[11px] text-slate-400 font-mono">Core Language</div>
-          </div>
+        <div class="bento-card p-4 text-center flex flex-col items-center justify-center space-y-2">
+          <i class="fa-brands fa-python text-2xl text-yellow-400"></i>
+          <span class="text-xs font-bold text-gray-200">Python</span>
+          <span class="text-[10px] font-mono text-gray-500">Core</span>
         </div>
 
-        <!-- Pandas -->
-        <div class="glass-card p-4 rounded-xl flex items-center space-x-3">
-          <img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/pandas.svg" class="w-7 h-7" alt="Pandas" style="filter: invert(45%) sepia(80%) saturate(400%) hue-rotate(200deg);">
-          <div>
-            <div class="font-bold text-sm text-slate-200">Pandas</div>
-            <div class="text-[11px] text-slate-400 font-mono">Data Wrangling</div>
-          </div>
+        <div class="bento-card p-4 text-center flex flex-col items-center justify-center space-y-2">
+          <i class="fa-solid fa-table text-2xl text-blue-400"></i>
+          <span class="text-xs font-bold text-gray-200">Pandas</span>
+          <span class="text-[10px] font-mono text-gray-500">Wrangling</span>
         </div>
 
-        <!-- NumPy -->
-        <div class="glass-card p-4 rounded-xl flex items-center space-x-3">
-          <img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/numpy.svg" class="w-7 h-7" alt="NumPy" style="filter: invert(55%) sepia(70%) saturate(500%) hue-rotate(180deg);">
-          <div>
-            <div class="font-bold text-sm text-slate-200">NumPy</div>
-            <div class="text-[11px] text-slate-400 font-mono">Numerical Computing</div>
-          </div>
+        <div class="bento-card p-4 text-center flex flex-col items-center justify-center space-y-2">
+          <i class="fa-solid fa-calculator text-2xl text-cyan-400"></i>
+          <span class="text-xs font-bold text-gray-200">NumPy</span>
+          <span class="text-[10px] font-mono text-gray-500">Math</span>
         </div>
 
-        <!-- Scikit-Learn -->
-        <div class="glass-card p-4 rounded-xl flex items-center space-x-3">
-          <img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/scikitlearn.svg" class="w-7 h-7" alt="Scikit-Learn" style="filter: invert(65%) sepia(90%) saturate(400%) hue-rotate(10deg);">
-          <div>
-            <div class="font-bold text-sm text-slate-200">Scikit-Learn</div>
-            <div class="text-[11px] text-slate-400 font-mono">Machine Learning</div>
-          </div>
+        <div class="bento-card p-4 text-center flex flex-col items-center justify-center space-y-2">
+          <i class="fa-solid fa-brain text-2xl text-orange-400"></i>
+          <span class="text-xs font-bold text-gray-200">Scikit-Learn</span>
+          <span class="text-[10px] font-mono text-gray-500">ML</span>
         </div>
 
-        <!-- Jupyter -->
-        <div class="glass-card p-4 rounded-xl flex items-center space-x-3">
-          <img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/jupyter.svg" class="w-7 h-7" alt="Jupyter" style="filter: invert(55%) sepia(85%) saturate(600%) hue-rotate(345deg);">
-          <div>
-            <div class="font-bold text-sm text-slate-200">Jupyter</div>
-            <div class="text-[11px] text-slate-400 font-mono">Interactive Compute</div>
-          </div>
+        <div class="bento-card p-4 text-center flex flex-col items-center justify-center space-y-2">
+          <i class="fa-solid fa-database text-2xl text-emerald-400"></i>
+          <span class="text-xs font-bold text-gray-200">SQL</span>
+          <span class="text-[10px] font-mono text-gray-500">Queries</span>
         </div>
 
-        <!-- SQL -->
-        <div class="glass-card p-4 rounded-xl flex items-center space-x-3">
-          <i class="fa-solid fa-database text-2xl text-brand-400"></i>
-          <div>
-            <div class="font-bold text-sm text-slate-200">SQL</div>
-            <div class="text-[11px] text-slate-400 font-mono">Relational Queries</div>
-          </div>
-        </div>
-
-        <!-- Git -->
-        <div class="glass-card p-4 rounded-xl flex items-center space-x-3">
-          <img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/git.svg" class="w-7 h-7" alt="Git" style="filter: invert(45%) sepia(90%) saturate(600%) hue-rotate(340deg);">
-          <div>
-            <div class="font-bold text-sm text-slate-200">Git</div>
-            <div class="text-[11px] text-slate-400 font-mono">Version Control</div>
-          </div>
-        </div>
-
-        <!-- Power BI -->
-        <div class="glass-card p-4 rounded-xl flex items-center space-x-3">
-          <img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/powerbi.svg" class="w-7 h-7" alt="Power BI" style="filter: invert(75%) sepia(70%) saturate(500%) hue-rotate(5deg);">
-          <div>
-            <div class="font-bold text-sm text-slate-200">Power BI</div>
-            <div class="text-[11px] text-slate-400 font-mono">BI &amp; Dashboards</div>
-          </div>
+        <div class="bento-card p-4 text-center flex flex-col items-center justify-center space-y-2">
+          <i class="fa-brands fa-git-alt text-2xl text-red-400"></i>
+          <span class="text-xs font-bold text-gray-200">Git</span>
+          <span class="text-[10px] font-mono text-gray-500">Version Control</span>
         </div>
 
       </div>
-    </section>
+    </div>
 
-    <!-- CONTACT / GET IN TOUCH SECTION -->
-    <section id="contact" class="glass-card p-10 rounded-3xl border border-slate-800 text-center space-y-6">
-      <div class="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-brand-500/10 border border-brand-500/20 text-brand-400 text-xs font-mono">
-        <span>Open for Collaborations &amp; Internships</span>
-      </div>
-      <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-100">Get In Touch</h2>
-      <p class="text-slate-400 max-w-lg mx-auto text-sm leading-relaxed">
-        Whether you want to discuss machine learning models, look over dataset pipelines, or chat about opportunities, feel free to reach out directly.
-      </p>
+    <!-- BENTO SECTION 4: CONTACT CARD -->
+    <div class="bento-card p-8 sm:p-10 text-center space-y-6 relative overflow-hidden" id="contact">
+      <div class="max-w-xl mx-auto space-y-4">
+        <h2 class="text-2xl sm:text-3xl font-extrabold text-gray-100">Ready to Connect?</h2>
+        <p class="text-gray-400 text-sm leading-relaxed">
+          I am actively seeking data science and machine learning roles or project collaborations. Direct outreach is welcome via email or LinkedIn.
+        </p>
 
-      <div class="flex flex-wrap justify-center gap-4 pt-4">
-        <a href="mailto:harishsenthilkmr@gmail.com" class="px-6 py-3 rounded-xl bg-brand-500 hover:bg-brand-600 text-slate-950 font-bold text-sm transition-all flex items-center space-x-2">
-          <i class="fa-solid fa-envelope"></i>
-          <span>Email Me Directly</span>
-        </a>
-        <a href="https://www.linkedin.com/in/harishsenthilkumar/" target="_blank" class="px-6 py-3 rounded-xl bg-slate-900 hover:bg-slate-800 border border-slate-800 text-slate-200 font-semibold text-sm transition-all flex items-center space-x-2">
-          <img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/linkedin.svg" class="w-4 h-4 invert" alt="LinkedIn">
-          <span>LinkedIn</span>
-        </a>
-        <a href="https://github.com/Harish-Senthilkumar" target="_blank" class="px-6 py-3 rounded-xl bg-slate-900 hover:bg-slate-800 border border-slate-800 text-slate-200 font-semibold text-sm transition-all flex items-center space-x-2">
-          <img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/github.svg" class="w-4 h-4 invert" alt="GitHub">
-          <span>GitHub</span>
-        </a>
+        <div class="flex flex-wrap justify-center gap-4 pt-2">
+          <a href="mailto:harishsenthilkmr@gmail.com" class="px-6 py-3 rounded-lg bg-blue-600 hover:bg-blue-500 text-white font-semibold text-xs transition-all flex items-center space-x-2 shadow-lg shadow-blue-600/20">
+            <i class="fa-solid fa-envelope"></i>
+            <span>harishsenthilkmr@gmail.com</span>
+          </a>
+          <a href="https://www.linkedin.com/in/harishsenthilkumar/" target="_blank" class="px-6 py-3 rounded-lg bg-gray-800 hover:bg-gray-700 border border-gray-700 text-gray-200 font-semibold text-xs transition-all flex items-center space-x-2">
+            <i class="fa-brands fa-linkedin text-blue-400"></i>
+            <span>LinkedIn</span>
+          </a>
+        </div>
       </div>
-    </section>
+    </div>
 
   </main>
 
-  <footer class="border-t border-slate-900 py-8 text-center font-mono text-xs text-slate-500">
-    &copy; 2026 Harish Senthilkumar. Built with Tailwind CSS &amp; Simple Icons.
+  <footer class="border-t border-gray-800/80 py-8 text-center text-xs text-gray-500 font-mono">
+    &copy; 2026 Harish Senthilkumar — Built for High Performance Data Science
   </footer>
 
 </body>
