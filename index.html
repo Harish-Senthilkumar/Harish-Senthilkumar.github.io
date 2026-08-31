@@ -1,397 +1,414 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Harish Senthilkumar — Data Science & ML Portfolio</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Harish Senthilkumar | Data Science & Machine Learning</title>
+  
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Google Fonts & FontAwesome -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
-<style>
-  :root {
-    --paper: #f6f8f7;
-    --paper-raised: #ffffff;
-    --ink: #182420;
-    --ink-soft: #4a5750;
-    --line: #dbe3de;
-    --teal: #1c7d76;
-    --teal-deep: #12534e;
-    --amber: #d98e04;
-    --radius: 10px;
-  }
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+            mono: ['"JetBrains Mono"', 'monospace'],
+          },
+          colors: {
+            brand: {
+              50: '#f0fdfa',
+              100: '#ccfbf1',
+              400: '#2dd4bf',
+              500: '#14b8a6',
+              600: '#0d9488',
+              900: '#134e4a',
+              950: '#042f2e',
+            }
+          }
+        }
+      }
+    }
+  </script>
 
-  * { box-sizing: border-box; }
-  html { scroll-behavior: smooth; }
-
-  body {
-    margin: 0;
-    background: var(--paper);
-    color: var(--ink);
-    font-family: 'IBM Plex Sans', sans-serif;
-    line-height: 1.55;
-  }
-
-  body::before {
-    content: "";
-    position: fixed;
-    inset: 0;
-    background-image:
-      linear-gradient(var(--line) 1px, transparent 1px),
-      linear-gradient(90deg, var(--line) 1px, transparent 1px);
-    background-size: 42px 42px;
-    opacity: 0.35;
-    pointer-events: none;
-    z-index: 0;
-  }
-
-  h1, h2, h3 { font-family: 'Space Grotesk', sans-serif; margin: 0; color: var(--ink); }
-  .mono { font-family: 'IBM Plex Mono', monospace; }
-  a { color: var(--teal-deep); }
-  .wrap { max-width: 880px; margin: 0 auto; padding: 0 24px; position: relative; z-index: 1; }
-
-  /* NAV */
-  nav {
-    position: sticky; top: 0; z-index: 10;
-    background: rgba(246,248,247,0.88);
-    backdrop-filter: blur(8px);
-    border-bottom: 1px solid var(--line);
-  }
-  nav .wrap { display: flex; align-items: center; justify-content: space-between; padding: 14px 24px; }
-  nav .brand { font-family: 'Space Grotesk', sans-serif; font-weight: 600; font-size: 16px; }
-  nav ul { list-style: none; display: flex; gap: 22px; margin: 0; padding: 0; }
-  nav a { text-decoration: none; color: var(--ink-soft); font-size: 14px; font-weight: 500; }
-  nav a:hover { color: var(--teal-deep); }
-
-  /* HERO */
-  header.hero { padding: 72px 0 48px; }
-  .eyebrow {
-    font-family: 'IBM Plex Mono', monospace;
-    font-size: 13px; color: var(--teal); letter-spacing: 0.04em; margin-bottom: 14px;
-  }
-  header.hero h1 { font-size: 42px; line-height: 1.15; max-width: 620px; letter-spacing: -0.02em; }
-  header.hero .sub { color: var(--ink-soft); font-size: 17px; max-width: 560px; margin-top: 14px; }
-  .hero-grid { display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 40px; align-items: center; margin-top: 36px; }
-
-  /* CHART CARD */
-  .chart-card {
-    background: var(--paper-raised);
-    border: 1px solid var(--line);
-    border-radius: var(--radius);
-    padding: 20px 22px 16px;
-    box-shadow: 0 1px 0 var(--line);
-  }
-  .chart-card .label { font-family: 'IBM Plex Mono', monospace; font-size: 11px; color: var(--ink-soft); text-transform: uppercase; letter-spacing: .06em; }
-  .chart-card svg { width: 100%; height: auto; margin-top: 10px; }
-  .chart-card .cap { font-size: 12.5px; color: var(--ink-soft); margin-top: 8px; }
-
-  /* SECTIONS */
-  section { padding: 56px 0; border-top: 1px solid var(--line); }
-  .kicker { font-family: 'IBM Plex Mono', monospace; font-size: 12px; color: var(--teal); letter-spacing: .06em; text-transform: uppercase; }
-  section h2 { font-size: 26px; margin-top: 6px; margin-bottom: 20px; }
-
-  /* ABOUT */
-  .about-text { max-width: 640px; color: var(--ink-soft); font-size: 15.5px; }
-  .about-text p { margin: 0 0 14px; }
-
-  /* ROADMAP */
-  .path { border-left: 2px solid var(--line); margin-left: 6px; padding-left: 26px; display: flex; flex-direction: column; gap: 20px; }
-  .path-item { position: relative; }
-  .path-item::before {
-    content: ""; position: absolute; left: -32px; top: 4px;
-    width: 12px; height: 12px; border-radius: 50%;
-    background: var(--paper-raised); border: 2px solid var(--line);
-  }
-  .path-item.done::before { background: var(--teal); border-color: var(--teal); }
-  .path-item.current::before { background: var(--amber); border-color: var(--amber); }
-  .path-item h3 { font-size: 15.5px; font-family: 'IBM Plex Sans', sans-serif; font-weight: 600; }
-  .path-item .status { font-family: 'IBM Plex Mono', monospace; font-size: 11.5px; color: var(--ink-soft); margin-left: 8px; }
-  .path-item p { margin: 4px 0 0; font-size: 14px; color: var(--ink-soft); }
-  .path-item.done h3 { color: var(--teal-deep); }
-
-  /* PROJECTS */
-  .project {
-    background: var(--paper-raised); border: 1px solid var(--line);
-    border-radius: var(--radius); padding: 24px 26px; margin-bottom: 20px;
-    transition: box-shadow .25s ease, transform .25s ease;
-  }
-  .project:hover { transform: translateY(-3px); box-shadow: 0 10px 24px rgba(24,36,32,0.08); }
-  .project-top { display: flex; align-items: baseline; justify-content: space-between; gap: 12px; flex-wrap: wrap; }
-  .project h3 { font-size: 19px; }
-  .project .status-tag {
-    font-family: 'IBM Plex Mono', monospace; font-size: 11px; padding: 3px 9px; border-radius: 20px;
-    border: 1px solid var(--line); color: var(--ink-soft);
-  }
-  .project .status-tag.live { color: var(--teal-deep); border-color: var(--teal); background: rgba(28,125,118,0.07); }
-  .project p.desc { color: var(--ink-soft); font-size: 14.5px; margin: 10px 0 16px; max-width: 620px; }
-
-  .stat-row { display: flex; gap: 22px; flex-wrap: wrap; margin-bottom: 16px; }
-  .stat .num { font-family: 'IBM Plex Mono', monospace; font-size: 20px; color: var(--teal-deep); font-weight: 600; }
-  .stat .desc2 { font-size: 12px; color: var(--ink-soft); }
-
-  .project .tags { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 16px; }
-  .project .tags span {
-    font-family: 'IBM Plex Mono', monospace; font-size: 11.5px; background: var(--paper);
-    border: 1px solid var(--line); padding: 4px 9px; border-radius: 6px; color: var(--ink-soft);
-  }
-  .project .links a {
-    font-size: 13.5px; font-weight: 600; text-decoration: none; margin-right: 18px;
-    border-bottom: 1px solid var(--teal); color: var(--teal-deep); padding-bottom: 1px;
-    display: inline-flex; align-items: center; gap: 6px;
-  }
-
-  /* TOOLBOX / SKILLS */
-  .skill-groups { display: grid; grid-template-columns: repeat(2, 1fr); gap: 22px; }
-  .skill-group h3 { font-size: 13px; font-family: 'IBM Plex Mono', monospace; text-transform: uppercase; letter-spacing: .05em; color: var(--ink-soft); font-weight: 500; margin-bottom: 10px; }
-  .skill-group .chips { display: flex; flex-wrap: wrap; gap: 8px; }
-  .skill-group .chips span {
-    font-size: 13.5px; background: var(--paper-raised); border: 1px solid var(--line);
-    padding: 6px 12px; border-radius: 7px; display: inline-flex; align-items: center; gap: 8px;
-  }
-  .skill-group .chips i { font-size: 16px; }
-
-  /* CONNECT */
-  .connect-row { display: flex; gap: 14px; flex-wrap: wrap; margin-top: 14px; }
-  .connect-row a {
-    text-decoration: none; font-weight: 600; font-size: 14.5px;
-    padding: 11px 20px; border-radius: 8px; border: 1px solid var(--ink);
-    color: var(--ink); transition: .2s; display: inline-flex; align-items: center; gap: 8px;
-  }
-  .connect-row a:hover { background: var(--ink); color: var(--paper); }
-  .connect-row a.primary { background: var(--teal-deep); border-color: var(--teal-deep); color: #fff; }
-  .connect-row a.primary:hover { background: var(--teal); border-color: var(--teal); }
-
-  footer { padding: 30px 0 50px; font-size: 13px; color: var(--ink-soft); }
-
-  @media (max-width: 720px){
-    nav ul { display: none; }
-    header.hero h1 { font-size: 32px; }
-    .hero-grid { grid-template-columns: 1fr; }
-    .skill-groups { grid-template-columns: 1fr; }
-  }
-</style>
+  <style>
+    body { font-family: 'Plus Jakarta Sans', sans-serif; }
+    .glass-card {
+      background: rgba(15, 23, 42, 0.65);
+      backdrop-filter: blur(16px);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+    }
+    .glass-card:hover {
+      border-color: rgba(45, 212, 191, 0.3);
+      box-shadow: 0 10px 30px -10px rgba(13, 148, 136, 0.15);
+    }
+    .gradient-text {
+      background: linear-gradient(135deg, #ffffff 0%, #cbd5e1 50%, #2dd4bf 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+  </style>
 </head>
-<body>
+<body class="bg-slate-950 text-slate-100 antialiased selection:bg-brand-500 selection:text-slate-950 min-h-screen">
 
-<nav>
-  <div class="wrap">
-    <div class="brand">Harish Senthilkumar <span class="mono" style="color:var(--teal);">/ data science</span></div>
-    <ul>
-      <li><a href="#about">About</a></li>
-      <li><a href="#path">Roadmap</a></li>
-      <li><a href="#projects">Projects</a></li>
-      <li><a href="#skills">Skills</a></li>
-      <li><a href="#connect">Connect</a></li>
-    </ul>
+  <!-- Background Mesh Glows -->
+  <div class="fixed inset-0 pointer-events-none z-0 overflow-hidden">
+    <div class="absolute -top-40 -left-40 w-96 h-96 bg-brand-500/10 rounded-full blur-3xl"></div>
+    <div class="absolute top-1/3 -right-40 w-96 h-96 bg-indigo-500/10 rounded-full blur-3xl"></div>
   </div>
-</nav>
 
-<div class="wrap">
+  <!-- Navigation -->
+  <nav class="sticky top-0 z-50 bg-slate-950/80 backdrop-blur-xl border-b border-slate-800/80">
+    <div class="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
+      <div class="flex items-center space-x-3">
+        <span class="w-3 h-3 rounded-full bg-brand-400 animate-pulse"></span>
+        <span class="font-mono font-bold text-slate-100 tracking-tight">harish<span class="text-brand-400">.ml</span></span>
+      </div>
+      <div class="hidden sm:flex space-x-8 text-sm font-medium text-slate-400">
+        <a href="#about" class="hover:text-brand-400 transition-colors">About</a>
+        <a href="#roadmap" class="hover:text-brand-400 transition-colors">Roadmap</a>
+        <a href="#projects" class="hover:text-brand-400 transition-colors">Projects</a>
+        <a href="#toolbox" class="hover:text-brand-400 transition-colors">Toolbox</a>
+        <a href="#contact" class="hover:text-brand-400 transition-colors">Contact</a>
+      </div>
+      <a href="mailto:harishsenthilkmr@gmail.com" class="px-4 py-2 rounded-lg bg-brand-500/10 border border-brand-500/30 text-brand-400 hover:bg-brand-500/20 text-xs font-mono font-semibold transition-all">
+        Hire / Contact
+      </a>
+    </div>
+  </nav>
 
-  <header class="hero">
-    <div class="eyebrow">/ data science student</div>
-    <h1>I turn messy datasets into findings someone can actually act on.</h1>
-    <p class="sub">College student building a foundation in data analysis and machine learning. One real dataset, one real question at a time.</p>
+  <main class="relative z-10 max-w-6xl mx-auto px-6 space-y-28 pt-12 pb-24">
 
-    <div class="hero-grid">
-      <div>
-        <p style="color:var(--ink-soft); font-size:15px; max-width:480px;">
-          Currently working through a self-directed path covering SQL, statistics, and classical ML. Documented transparently as I build.
+    <!-- HERO SECTION -->
+    <section id="about" class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+      <div class="lg:col-span-7 space-y-6">
+        <div class="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-slate-900 border border-slate-800 text-brand-400 text-xs font-mono">
+          <i class="fa-solid fa-code-branch"></i>
+          <span>Data Science &amp; Machine Learning Practitioner</span>
+        </div>
+        <h1 class="text-4xl sm:text-6xl font-extrabold tracking-tight leading-[1.1] gradient-text">
+          Turning raw datasets into actionable ML pipelines.
+        </h1>
+        <p class="text-slate-400 text-lg leading-relaxed max-w-xl">
+          College student building end-to-end predictive models, statistical exploratory analysis, and clean machine learning workflows using real-world datasets.
         </p>
-      </div>
 
-      <div class="chart-card">
-        <div class="label">Project 01 · Avg Installs by Content Rating</div>
-        <svg viewBox="0 0 320 170" xmlns="http://www.w3.org/2000/svg">
-          <line x1="40" y1="10" x2="40" y2="140" stroke="#dbe3de" stroke-width="1"/>
-          <line x1="40" y1="140" x2="300" y2="140" stroke="#dbe3de" stroke-width="1"/>
-          <g font-family="IBM Plex Mono" font-size="9" fill="#4a5750">
-            <rect x="58" y="88" width="40" height="52" fill="#1c7d76"/>
-            <text x="78" y="155" text-anchor="middle">Everyone</text>
-            <text x="78" y="82" text-anchor="middle" fill="#12534e" font-weight="600">13.1M</text>
-
-            <rect x="118" y="20" width="40" height="120" fill="#1c7d76"/>
-            <text x="138" y="155" text-anchor="middle">10+</text>
-            <text x="138" y="14" text-anchor="middle" fill="#12534e" font-weight="600">32M</text>
-
-            <rect x="178" y="32" width="40" height="108" fill="#1c7d76"/>
-            <text x="198" y="155" text-anchor="middle">Teen</text>
-            <text x="198" y="26" text-anchor="middle" fill="#12534e" font-weight="600">28.7M</text>
-
-            <rect x="238" y="99" width="40" height="41" fill="#d98e04"/>
-            <text x="258" y="155" text-anchor="middle">Mature 17+</text>
-            <text x="258" y="93" text-anchor="middle" fill="#a56d00" font-weight="600">11.1M</text>
-          </g>
-        </svg>
-        <div class="cap">Everyone 10+ and Teen apps out-install general-audience apps by roughly 2x to 3x based on Play Store dataset findings.</div>
-      </div>
-    </div>
-  </header>
-
-  <section id="about">
-    <div class="kicker">About</div>
-    <h2>Where I am right now</h2>
-    <div class="about-text">
-      <p>I am a college student learning data science by actually doing it. That means real, messy public datasets, questions I come up with myself, and writing down what I find even when the results subvert expectations.</p>
-      <p>Right now I am building a foundation across SQL, Python (pandas/NumPy), statistics, and classical machine learning, aiming toward pipeline and cloud tooling next. Every project below is something I executed end to end.</p>
-    </div>
-  </section>
-
-  <section id="path">
-    <div class="kicker">Roadmap</div>
-    <h2>Learning path</h2>
-    <div class="path">
-      <div class="path-item done">
-        <h3>SQL <span class="status">completed</span></h3>
-        <p>Querying and shaping relational data.</p>
-      </div>
-      <div class="path-item done">
-        <h3>Pandas &amp; NumPy <span class="status">completed</span></h3>
-        <p>Cleaning, transforming, and analyzing tabular datasets.</p>
-      </div>
-      <div class="path-item done">
-        <h3>Matplotlib &amp; Seaborn <span class="status">completed</span></h3>
-        <p>Turning cleaned data into actionable visuals and publication-ready charts.</p>
-      </div>
-      <div class="path-item done">
-        <h3>Statistics &amp; Classical Machine Learning <span class="status">completed</span></h3>
-        <p>Hypothesis testing, correlation analysis, and classification models via scikit-learn.</p>
-      </div>
-      <div class="path-item current">
-        <h3>Power BI, Snowflake &amp; AWS <span class="status">in progress</span></h3>
-        <p>Interactive reporting, enterprise cloud warehousing, and pipeline architecture.</p>
-      </div>
-      <div class="path-item">
-        <h3>LLM APIs &amp; RAG Systems <span class="status">planned</span></h3>
-        <p>Orchestrating AI models with retrieval systems over custom enterprise data.</p>
-      </div>
-    </div>
-  </section>
-
-  <section id="projects">
-    <div class="kicker">Projects</div>
-    <h2>Featured Projects</h2>
-
-    <div class="project">
-      <div class="project-top">
-        <h3>Google Play Store: What Drives App Installs</h3>
-        <span class="status-tag live">complete</span>
-      </div>
-      <p class="desc">Cleaned and analyzed ~10,000 Play Store listings to test key assumptions about app success across category saturation, file size, pricing, update cadence, and content ratings.</p>
-
-      <div class="stat-row">
-        <div class="stat"><div class="num">0.066</div><div class="desc2">Size to rating correlation (negligible)</div></div>
-        <div class="stat"><div class="num">4.20 vs 4.27</div><div class="desc2">Free vs. paid avg rating</div></div>
-        <div class="stat"><div class="num">3x</div><div class="desc2">Install multiplier for Teen vs. Everyone apps</div></div>
-      </div>
-
-      <div class="tags">
-        <span>pandas</span>
-        <span>matplotlib</span>
-        <span>correlation analysis</span>
-        <span>data cleaning</span>
-      </div>
-      <div class="links">
-        <a href="https://github.com/Harish-Senthilkumar/google-play-store-analysis" target="_blank">
-          View Repository <i class="fa-solid fa-arrow-up-right-from-square" style="font-size:11px;"></i>
-        </a>
-      </div>
-    </div>
-
-    <div class="project">
-      <div class="project-top">
-        <h3>Bank Marketing: Predicting Term Deposit Subscriptions</h3>
-        <span class="status-tag live">complete</span>
-      </div>
-      <p class="desc">Built an end-to-end predictive classification pipeline using the UCI Bank Marketing dataset (45,000+ records) to identify high-probability clients for term deposit subscriptions.</p>
-
-      <div class="stat-row">
-        <div class="stat"><div class="num">90.1%</div><div class="desc2">Classification Accuracy</div></div>
-        <div class="stat"><div class="num">0.928</div><div class="desc2">ROC-AUC Score (Random Forest)</div></div>
-        <div class="stat"><div class="num">4.3x</div><div class="desc2">Conversion lift on duration > 300s</div></div>
-      </div>
-
-      <div class="tags">
-        <span>scikit-learn</span>
-        <span>random forest</span>
-        <span>classification</span>
-        <span>feature engineering</span>
-      </div>
-      <div class="links">
-        <a href="https://github.com/Harish-Senthilkumar/bank-marketing-ml" target="_blank">
-          View Repository <i class="fa-solid fa-arrow-up-right-from-square" style="font-size:11px;"></i>
-        </a>
-      </div>
-    </div>
-  </section>
-
-  <section id="skills">
-    <div class="kicker">Toolbox</div>
-    <h2>Skills &amp; Tech Stack</h2>
-    <div class="skill-groups">
-      <div class="skill-group">
-        <h3>Languages &amp; Tools</h3>
-        <div class="chips">
-          <span><i class="devicon-python-plain colored"></i> Python</span>
-          <span><i class="fa-solid fa-database" style="color:var(--teal);"></i> SQL</span>
-          <span><i class="devicon-git-plain colored"></i> Git / GitHub</span>
-          <span><i class="devicon-jupyter-plain colored"></i> Jupyter</span>
+        <div class="flex flex-wrap gap-4 pt-2">
+          <a href="#projects" class="px-6 py-3 rounded-xl bg-brand-500 hover:bg-brand-600 text-slate-950 font-bold text-sm transition-all flex items-center space-x-2 shadow-lg shadow-brand-500/20">
+            <span>Explore Featured Projects</span>
+            <i class="fa-solid fa-arrow-down text-xs"></i>
+          </a>
+          <a href="https://github.com/Harish-Senthilkumar" target="_blank" class="px-6 py-3 rounded-xl bg-slate-900 hover:bg-slate-800 border border-slate-800 text-slate-200 font-semibold text-sm transition-all flex items-center space-x-2">
+            <img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/github.svg" class="w-4 h-4 invert" alt="GitHub">
+            <span>GitHub Profile</span>
+          </a>
         </div>
       </div>
-      <div class="skill-group">
-        <h3>Data &amp; Analysis</h3>
-        <div class="chips">
-          <span><i class="devicon-pandas-original colored"></i> pandas</span>
-          <span><i class="devicon-numpy-original colored"></i> NumPy</span>
-          <span><i class="fa-solid fa-chart-line" style="color:var(--teal);"></i> Matplotlib</span>
-          <span><i class="fa-solid fa-chart-pie" style="color:var(--teal);"></i> Seaborn</span>
-        </div>
-      </div>
-      <div class="skill-group">
-        <h3>Statistics &amp; ML</h3>
-        <div class="chips">
-          <span>Hypothesis Testing</span>
-          <span>Correlation Analysis</span>
-          <span><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/scikitlearn/scikitlearn-original.svg" style="width:16px;height:16px;" alt="scikit-learn"> scikit-learn</span>
-        </div>
-      </div>
-      <div class="skill-group">
-        <h3>In Progress</h3>
-        <div class="chips">
-          <span>Power BI</span>
-          <span>Snowflake</span>
-          <span>AWS</span>
-        </div>
-      </div>
-    </div>
-  </section>
 
-  <section id="connect">
-    <div class="kicker">Get in touch</div>
-    <h2>Connect</h2>
-    <div>
-      <p style="color:var(--ink-soft); font-size:15px; max-width:520px;">Open to conversations about data science, machine learning internships, or analyzing interesting datasets.</p>
-      <div class="connect-row">
-        <a class="primary" href="mailto:harishsenthilkmr@gmail.com">
-          <i class="fa-solid fa-envelope"></i> Email Me
+      <!-- Live Terminal Widget -->
+      <div class="lg:col-span-5">
+        <div class="bg-slate-900 border border-slate-800 rounded-2xl overflow-hidden shadow-2xl">
+          <div class="bg-slate-950 px-4 py-3 border-b border-slate-800 flex items-center justify-between">
+            <div class="flex space-x-2">
+              <span class="w-3 h-3 rounded-full bg-rose-500/80 inline-block"></span>
+              <span class="w-3 h-3 rounded-full bg-amber-500/80 inline-block"></span>
+              <span class="w-3 h-3 rounded-full bg-emerald-500/80 inline-block"></span>
+            </div>
+            <span class="font-mono text-xs text-slate-500">pipeline_status.py</span>
+          </div>
+          <div class="p-5 font-mono text-xs space-y-3 text-slate-300 leading-relaxed">
+            <p class="text-slate-500"># Initializing ML Workflow</p>
+            <p><span class="text-brand-400">import</span> pandas <span class="text-brand-400">as</span> pd</p>
+            <p><span class="text-brand-400">from</span> sklearn.ensemble <span class="text-brand-400">import</span> RandomForestClassifier</p>
+            <div class="pt-2 border-t border-slate-800/80">
+              <p class="text-emerald-400">✓ Dataset: 45,211 rows loaded</p>
+              <p class="text-emerald-400">✓ Accuracy Score: 90.1%</p>
+              <p class="text-cyan-400">✓ ROC-AUC metric: 0.928</p>
+            </div>
+            <div class="bg-slate-950 p-3 rounded-lg border border-slate-800 text-[11px] text-slate-400">
+              <span class="text-amber-400 font-semibold">Primary Feature:</span> Call duration &gt; 300s increases term deposit conversion by <span class="text-brand-400 font-bold">4.3x</span>.
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ROADMAP SECTION -->
+    <section id="roadmap" class="space-y-8 border-t border-slate-900 pt-16">
+      <div>
+        <h2 class="font-mono text-xs font-bold uppercase tracking-widest text-brand-400 mb-2">Technical Evolution</h2>
+        <h3 class="text-2xl font-bold text-slate-100">Learning &amp; Execution Roadmap</h3>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <!-- Step 1 -->
+        <div class="glass-card p-6 rounded-2xl relative overflow-hidden">
+          <div class="text-brand-400 font-mono text-xs font-bold mb-3 flex items-center justify-between">
+            <span>01. CORE FOUNDATIONS</span>
+            <span class="px-2 py-0.5 rounded bg-brand-500/10 border border-brand-500/30 text-brand-400">Completed</span>
+          </div>
+          <h4 class="text-lg font-bold text-slate-100 mb-2">Data Structuring &amp; Wrangling</h4>
+          <p class="text-slate-400 text-sm leading-relaxed mb-4">Mastered relational queries in SQL alongside data processing pipelines with Python, Pandas, and NumPy.</p>
+          <div class="flex flex-wrap gap-2">
+            <span class="text-[11px] font-mono bg-slate-900 text-slate-300 px-2.5 py-1 rounded-md border border-slate-800">SQL</span>
+            <span class="text-[11px] font-mono bg-slate-900 text-slate-300 px-2.5 py-1 rounded-md border border-slate-800">Pandas</span>
+            <span class="text-[11px] font-mono bg-slate-900 text-slate-300 px-2.5 py-1 rounded-md border border-slate-800">NumPy</span>
+          </div>
+        </div>
+
+        <!-- Step 2 -->
+        <div class="glass-card p-6 rounded-2xl relative overflow-hidden">
+          <div class="text-brand-400 font-mono text-xs font-bold mb-3 flex items-center justify-between">
+            <span>02. MODELING &amp; STATS</span>
+            <span class="px-2 py-0.5 rounded bg-brand-500/10 border border-brand-500/30 text-brand-400">Completed</span>
+          </div>
+          <h4 class="text-lg font-bold text-slate-100 mb-2">Machine Learning &amp; Viz</h4>
+          <p class="text-slate-400 text-sm leading-relaxed mb-4">Constructed classification algorithms, hypothesis tests, and publication-ready charts using Scikit-Learn and Seaborn.</p>
+          <div class="flex flex-wrap gap-2">
+            <span class="text-[11px] font-mono bg-slate-900 text-slate-300 px-2.5 py-1 rounded-md border border-slate-800">Scikit-Learn</span>
+            <span class="text-[11px] font-mono bg-slate-900 text-slate-300 px-2.5 py-1 rounded-md border border-slate-800">Matplotlib</span>
+            <span class="text-[11px] font-mono bg-slate-900 text-slate-300 px-2.5 py-1 rounded-md border border-slate-800">Seaborn</span>
+          </div>
+        </div>
+
+        <!-- Step 3 -->
+        <div class="glass-card p-6 rounded-2xl relative overflow-hidden">
+          <div class="text-amber-400 font-mono text-xs font-bold mb-3 flex items-center justify-between">
+            <span>03. CLOUD &amp; PIPELINES</span>
+            <span class="px-2 py-0.5 rounded bg-amber-500/10 border border-amber-500/30 text-amber-400">In Progress</span>
+          </div>
+          <h4 class="text-lg font-bold text-slate-100 mb-2">Enterprise Analytics</h4>
+          <p class="text-slate-400 text-sm leading-relaxed mb-4">Expanding into cloud warehousing, dashboard reporting, and orchestrating scalable machine learning models.</p>
+          <div class="flex flex-wrap gap-2">
+            <span class="text-[11px] font-mono bg-slate-900 text-slate-300 px-2.5 py-1 rounded-md border border-slate-800">Power BI</span>
+            <span class="text-[11px] font-mono bg-slate-900 text-slate-300 px-2.5 py-1 rounded-md border border-slate-800">Snowflake</span>
+            <span class="text-[11px] font-mono bg-slate-900 text-slate-300 px-2.5 py-1 rounded-md border border-slate-800">AWS</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FEATURED PROJECTS SECTION -->
+    <section id="projects" class="space-y-8 border-t border-slate-900 pt-16">
+      <div>
+        <h2 class="font-mono text-xs font-bold uppercase tracking-widest text-brand-400 mb-2">Portfolio</h2>
+        <h3 class="text-2xl font-bold text-slate-100">Featured Projects</h3>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        
+        <!-- Project Card 1: Bank Marketing ML -->
+        <div class="glass-card p-8 rounded-2xl flex flex-col justify-between transition-all">
+          <div class="space-y-4">
+            <div class="flex justify-between items-start">
+              <span class="px-3 py-1 text-xs font-mono font-semibold rounded-full bg-brand-500/10 text-brand-400 border border-brand-500/20">Machine Learning</span>
+              <a href="https://github.com/Harish-Senthilkumar/bank-marketing-ml" target="_blank" class="text-slate-400 hover:text-white transition-colors">
+                <img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/github.svg" class="w-5 h-5 invert" alt="GitHub Repo">
+              </a>
+            </div>
+            <h4 class="text-xl font-bold text-slate-100">Bank Telemarketing Prediction Pipeline</h4>
+            <p class="text-slate-400 text-sm leading-relaxed">
+              Engineered a predictive model on 45,000+ customer records to identify high-converting term deposit leads, minimizing unnecessary outreach costs for sales teams.
+            </p>
+
+            <!-- Metrics -->
+            <div class="grid grid-cols-3 gap-3 pt-2">
+              <div class="bg-slate-950 p-3 rounded-xl border border-slate-800/80 text-center">
+                <div class="text-lg font-bold text-brand-400 font-mono">90.1%</div>
+                <div class="text-[10px] text-slate-400 uppercase font-mono mt-0.5">Accuracy</div>
+              </div>
+              <div class="bg-slate-950 p-3 rounded-xl border border-slate-800/80 text-center">
+                <div class="text-lg font-bold text-indigo-400 font-mono">0.928</div>
+                <div class="text-[10px] text-slate-400 uppercase font-mono mt-0.5">ROC-AUC</div>
+              </div>
+              <div class="bg-slate-950 p-3 rounded-xl border border-slate-800/80 text-center">
+                <div class="text-lg font-bold text-teal-400 font-mono">4.3x</div>
+                <div class="text-[10px] text-slate-400 uppercase font-mono mt-0.5">Lift Factor</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="pt-6 mt-6 border-t border-slate-800/80 flex items-center justify-between">
+            <div class="flex flex-wrap gap-2">
+              <span class="text-xs font-mono text-slate-400">Python</span> •
+              <span class="text-xs font-mono text-slate-400">Scikit-Learn</span> •
+              <span class="text-xs font-mono text-slate-400">Pandas</span>
+            </div>
+            <a href="https://github.com/Harish-Senthilkumar/bank-marketing-ml" target="_blank" class="text-xs font-mono font-semibold text-brand-400 hover:text-brand-300 flex items-center space-x-1">
+              <span>View Code</span>
+              <i class="fa-solid fa-arrow-right text-[10px]"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- Project Card 2: Google Play Store Analysis -->
+        <div class="glass-card p-8 rounded-2xl flex flex-col justify-between transition-all">
+          <div class="space-y-4">
+            <div class="flex justify-between items-start">
+              <span class="px-3 py-1 text-xs font-mono font-semibold rounded-full bg-indigo-500/10 text-indigo-400 border border-indigo-500/20">Data Analysis</span>
+              <a href="https://github.com/Harish-Senthilkumar/google-play-store-analysis" target="_blank" class="text-slate-400 hover:text-white transition-colors">
+                <img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/github.svg" class="w-5 h-5 invert" alt="GitHub Repo">
+              </a>
+            </div>
+            <h4 class="text-xl font-bold text-slate-100">Google Play Store Market Exploratory Analysis</h4>
+            <p class="text-slate-400 text-sm leading-relaxed">
+              Cleaned and analyzed 10,000+ app listings to evaluate common industry assumptions regarding application size, user ratings, monetization models, and target audience performance.
+            </p>
+
+            <!-- Metrics -->
+            <div class="grid grid-cols-3 gap-3 pt-2">
+              <div class="bg-slate-950 p-3 rounded-xl border border-slate-800/80 text-center">
+                <div class="text-lg font-bold text-indigo-400 font-mono">0.066</div>
+                <div class="text-[10px] text-slate-400 uppercase font-mono mt-0.5">Size Correlation</div>
+              </div>
+              <div class="bg-slate-950 p-3 rounded-xl border border-slate-800/80 text-center">
+                <div class="text-lg font-bold text-brand-400 font-mono">4.27</div>
+                <div class="text-[10px] text-slate-400 uppercase font-mono mt-0.5">Paid App Rating</div>
+              </div>
+              <div class="bg-slate-950 p-3 rounded-xl border border-slate-800/80 text-center">
+                <div class="text-lg font-bold text-emerald-400 font-mono">3x</div>
+                <div class="text-[10px] text-slate-400 uppercase font-mono mt-0.5">Teen Install Gap</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="pt-6 mt-6 border-t border-slate-800/80 flex items-center justify-between">
+            <div class="flex flex-wrap gap-2">
+              <span class="text-xs font-mono text-slate-400">Python</span> •
+              <span class="text-xs font-mono text-slate-400">Matplotlib</span> •
+              <span class="text-xs font-mono text-slate-400">Seaborn</span>
+            </div>
+            <a href="https://github.com/Harish-Senthilkumar/google-play-store-analysis" target="_blank" class="text-xs font-mono font-semibold text-brand-400 hover:text-brand-300 flex items-center space-x-1">
+              <span>View Code</span>
+              <i class="fa-solid fa-arrow-right text-[10px]"></i>
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- TECHNICAL TOOLBOX / LOGOS SECTION -->
+    <section id="toolbox" class="space-y-8 border-t border-slate-900 pt-16">
+      <div>
+        <h2 class="font-mono text-xs font-bold uppercase tracking-widest text-brand-400 mb-2">Ecosystem</h2>
+        <h3 class="text-2xl font-bold text-slate-100">Technical Toolbox</h3>
+      </div>
+
+      <div class="grid grid-cols-2 sm:grid-cols-4 gap-4">
+        
+        <!-- Python -->
+        <div class="glass-card p-4 rounded-xl flex items-center space-x-3">
+          <img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/python.svg" class="w-7 h-7" alt="Python" style="filter: invert(72%) sepia(85%) saturate(362%) hue-rotate(9deg) brightness(98%) contrast(92%);">
+          <div>
+            <div class="font-bold text-sm text-slate-200">Python</div>
+            <div class="text-[11px] text-slate-400 font-mono">Core Language</div>
+          </div>
+        </div>
+
+        <!-- Pandas -->
+        <div class="glass-card p-4 rounded-xl flex items-center space-x-3">
+          <img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/pandas.svg" class="w-7 h-7" alt="Pandas" style="filter: invert(45%) sepia(80%) saturate(400%) hue-rotate(200deg);">
+          <div>
+            <div class="font-bold text-sm text-slate-200">Pandas</div>
+            <div class="text-[11px] text-slate-400 font-mono">Data Wrangling</div>
+          </div>
+        </div>
+
+        <!-- NumPy -->
+        <div class="glass-card p-4 rounded-xl flex items-center space-x-3">
+          <img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/numpy.svg" class="w-7 h-7" alt="NumPy" style="filter: invert(55%) sepia(70%) saturate(500%) hue-rotate(180deg);">
+          <div>
+            <div class="font-bold text-sm text-slate-200">NumPy</div>
+            <div class="text-[11px] text-slate-400 font-mono">Numerical Computing</div>
+          </div>
+        </div>
+
+        <!-- Scikit-Learn -->
+        <div class="glass-card p-4 rounded-xl flex items-center space-x-3">
+          <img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/scikitlearn.svg" class="w-7 h-7" alt="Scikit-Learn" style="filter: invert(65%) sepia(90%) saturate(400%) hue-rotate(10deg);">
+          <div>
+            <div class="font-bold text-sm text-slate-200">Scikit-Learn</div>
+            <div class="text-[11px] text-slate-400 font-mono">Machine Learning</div>
+          </div>
+        </div>
+
+        <!-- Jupyter -->
+        <div class="glass-card p-4 rounded-xl flex items-center space-x-3">
+          <img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/jupyter.svg" class="w-7 h-7" alt="Jupyter" style="filter: invert(55%) sepia(85%) saturate(600%) hue-rotate(345deg);">
+          <div>
+            <div class="font-bold text-sm text-slate-200">Jupyter</div>
+            <div class="text-[11px] text-slate-400 font-mono">Interactive Compute</div>
+          </div>
+        </div>
+
+        <!-- SQL -->
+        <div class="glass-card p-4 rounded-xl flex items-center space-x-3">
+          <i class="fa-solid fa-database text-2xl text-brand-400"></i>
+          <div>
+            <div class="font-bold text-sm text-slate-200">SQL</div>
+            <div class="text-[11px] text-slate-400 font-mono">Relational Queries</div>
+          </div>
+        </div>
+
+        <!-- Git -->
+        <div class="glass-card p-4 rounded-xl flex items-center space-x-3">
+          <img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/git.svg" class="w-7 h-7" alt="Git" style="filter: invert(45%) sepia(90%) saturate(600%) hue-rotate(340deg);">
+          <div>
+            <div class="font-bold text-sm text-slate-200">Git</div>
+            <div class="text-[11px] text-slate-400 font-mono">Version Control</div>
+          </div>
+        </div>
+
+        <!-- Power BI -->
+        <div class="glass-card p-4 rounded-xl flex items-center space-x-3">
+          <img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/powerbi.svg" class="w-7 h-7" alt="Power BI" style="filter: invert(75%) sepia(70%) saturate(500%) hue-rotate(5deg);">
+          <div>
+            <div class="font-bold text-sm text-slate-200">Power BI</div>
+            <div class="text-[11px] text-slate-400 font-mono">BI &amp; Dashboards</div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- CONTACT / GET IN TOUCH SECTION -->
+    <section id="contact" class="glass-card p-10 rounded-3xl border border-slate-800 text-center space-y-6">
+      <div class="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-brand-500/10 border border-brand-500/20 text-brand-400 text-xs font-mono">
+        <span>Open for Collaborations &amp; Internships</span>
+      </div>
+      <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-100">Get In Touch</h2>
+      <p class="text-slate-400 max-w-lg mx-auto text-sm leading-relaxed">
+        Whether you want to discuss machine learning models, look over dataset pipelines, or chat about opportunities, feel free to reach out directly.
+      </p>
+
+      <div class="flex flex-wrap justify-center gap-4 pt-4">
+        <a href="mailto:harishsenthilkmr@gmail.com" class="px-6 py-3 rounded-xl bg-brand-500 hover:bg-brand-600 text-slate-950 font-bold text-sm transition-all flex items-center space-x-2">
+          <i class="fa-solid fa-envelope"></i>
+          <span>Email Me Directly</span>
         </a>
-        <a href="https://www.linkedin.com/in/harishsenthilkumar/" target="_blank">
-          <i class="devicon-linkedin-plain colored"></i> LinkedIn
+        <a href="https://www.linkedin.com/in/harishsenthilkumar/" target="_blank" class="px-6 py-3 rounded-xl bg-slate-900 hover:bg-slate-800 border border-slate-800 text-slate-200 font-semibold text-sm transition-all flex items-center space-x-2">
+          <img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/linkedin.svg" class="w-4 h-4 invert" alt="LinkedIn">
+          <span>LinkedIn</span>
         </a>
-        <a href="https://github.com/Harish-Senthilkumar" target="_blank">
-          <i class="devicon-github-original"></i> GitHub
+        <a href="https://github.com/Harish-Senthilkumar" target="_blank" class="px-6 py-3 rounded-xl bg-slate-900 hover:bg-slate-800 border border-slate-800 text-slate-200 font-semibold text-sm transition-all flex items-center space-x-2">
+          <img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/github.svg" class="w-4 h-4 invert" alt="GitHub">
+          <span>GitHub</span>
         </a>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <footer>
-    Built and maintained by Harish Senthilkumar.
+  </main>
+
+  <footer class="border-t border-slate-900 py-8 text-center font-mono text-xs text-slate-500">
+    &copy; 2026 Harish Senthilkumar. Built with Tailwind CSS &amp; Simple Icons.
   </footer>
-
-</div>
 
 </body>
 </html>
