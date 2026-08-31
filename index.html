@@ -5,9 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Harish Senthilkumar | Data Science & ML Portfolio</title>
   
-  <!-- Tailwind CSS -->
   <script src="https://cdn.tailwindcss.com"></script>
-  <!-- Google Fonts & FontAwesome -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
@@ -57,7 +55,6 @@
       color: #60a5fa;
       border-bottom: 2px solid #3b82f6;
     }
-    /* Animated Auto Cursor */
     .animated-cursor {
       position: absolute;
       width: 18px;
@@ -70,11 +67,9 @@
 </head>
 <body class="antialiased selection:bg-blue-500 selection:text-white">
 
-  <!-- Top Navigation Bar -->
   <header class="sticky top-0 z-50 bg-[#090d16]/90 backdrop-blur-md border-b border-gray-800/80">
     <div class="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
       
-      <!-- Brand Logo -->
       <div class="flex items-center space-x-3">
         <div class="w-8 h-8 rounded-lg bg-blue-600/20 border border-blue-500/30 flex items-center justify-center font-mono text-blue-400 font-bold text-sm">
           HS
@@ -87,7 +82,7 @@
 
       <nav class="hidden md:flex items-center space-x-6 text-xs font-semibold uppercase tracking-wider text-gray-400">
         <a href="#overview" class="hover:text-blue-400 transition-colors">Overview</a>
-        <a href="#roadmap" class="hover:text-blue-400 transition-colors">Roadmap &amp; Skills</a>
+        <a href="#roadmap" class="hover:text-blue-400 transition-colors">Roadmap</a>
         <a href="#projects" class="hover:text-blue-400 transition-colors">Projects</a>
         <a href="#stack" class="hover:text-blue-400 transition-colors">Tech Stack</a>
         <a href="#contact" class="hover:text-blue-400 transition-colors">Contact</a>
@@ -100,13 +95,10 @@
     </div>
   </header>
 
-  <!-- Main Content Grid -->
   <main class="max-w-7xl mx-auto px-6 py-10 space-y-12" id="overview">
 
-    <!-- HERO SECTION & AUTO-PLAYING WINDOW TERMINAL -->
     <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-stretch">
       
-      <!-- Bio Header -->
       <div class="lg:col-span-7 bento-card p-8 sm:p-10 flex flex-col justify-between relative overflow-hidden">
         <div class="absolute -right-20 -top-20 w-80 h-80 bg-blue-600/10 rounded-full blur-3xl pointer-events-none"></div>
         
@@ -117,11 +109,11 @@
           </div>
 
           <h1 class="text-3xl sm:text-5xl font-extrabold tracking-tight leading-tight gradient-header">
-            Building predictive models &amp; clean data pipelines.
+            Building statistical models &amp; data pipelines.
           </h1>
 
           <p class="text-gray-400 text-sm sm:text-base leading-relaxed">
-            Data Science practitioner specializing in predictive modeling, statistical exploratory data analysis, and end-to-end Python workflows designed to yield quantifiable insights.
+            Data Science practitioner specializing in predictive modeling, statistical exploratory data analysis, and scalable Python workflows designed to extract structured business insights.
           </p>
         </div>
 
@@ -141,22 +133,18 @@
         </div>
       </div>
 
-      <!-- Windows-Only Style Code Terminal with Automated Cursor Simulation -->
       <div class="lg:col-span-5 bg-gray-900 border border-gray-800 rounded-2xl overflow-hidden flex flex-col justify-between shadow-2xl relative">
         
-        <!-- Simulated Auto Cursor -->
         <div id="virtual-cursor" class="animated-cursor text-blue-400">
           <i class="fa-solid fa-mouse-pointer text-sm drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)]"></i>
         </div>
 
-        <!-- Windows GUI Bar -->
         <div class="bg-gray-950 px-4 pt-3 border-b border-gray-800">
           <div class="flex items-center justify-between pb-2">
             <span class="text-[11px] font-mono text-gray-400 flex items-center space-x-2">
               <i class="fa-brands fa-windows text-blue-400"></i>
-              <span>VS Code — Data Science Terminal</span>
+              <span>VS Code — Telemetry GUI</span>
             </span>
-            <!-- Windows Standard Window Controls -->
             <div class="text-gray-500 text-xs space-x-3 flex items-center">
               <i class="fa-solid fa-minus hover:text-white cursor-pointer"></i>
               <i class="fa-regular fa-square hover:text-white cursor-pointer text-[10px]"></i>
@@ -164,7 +152,6 @@
             </div>
           </div>
 
-          <!-- Code Tabs -->
           <div class="flex space-x-1 text-xs font-mono relative">
             <button onclick="switchTab('pipeline')" id="tab-pipeline" class="tab-btn active px-3 py-1.5 rounded-t-md text-gray-400 hover:text-white transition-all flex items-center space-x-1.5">
               <i class="fa-brands fa-python text-yellow-500 text-[10px]"></i>
@@ -177,17 +164,14 @@
           </div>
         </div>
 
-        <!-- Terminal Output -->
-        <div class="p-5 font-mono text-xs space-y-3 text-gray-300 leading-relaxed bg-gray-950/80 flex-grow" id="terminal-content">
-          <!-- Populated via JS -->
-        </div>
+        <div class="p-5 font-mono text-xs space-y-3 text-gray-300 leading-relaxed bg-gray-950/80 flex-grow relative overflow-hidden" id="terminal-content">
+          </div>
 
-        <!-- Terminal Status Footer -->
         <div class="bg-gray-950 px-4 py-2 border-t border-gray-800/80 text-[10px] font-mono text-gray-500 flex justify-between">
           <span>Python 3.11.4 • Scikit-Learn</span>
           <span class="text-emerald-400 flex items-center space-x-1">
             <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-ping"></span>
-            <span>Live Auto Loop</span>
+            <span>Live Telemetry Running</span>
           </span>
         </div>
 
@@ -195,131 +179,163 @@
 
     </div>
 
-    <!-- TECHNICAL ROADMAP & LEARNING OUTCOMES -->
-    <section id="roadmap" class="space-y-6 pt-4">
+    <section id="roadmap" class="space-y-8 pt-4">
       <div>
-        <span class="text-xs font-mono uppercase tracking-widest text-blue-400 font-bold">Progression &amp; Mastery</span>
-        <h2 class="text-2xl font-bold text-gray-100">Technical Roadmap &amp; Learning Outcomes</h2>
+        <span class="text-xs font-mono uppercase tracking-widest text-blue-400 font-bold">Progression Pathway</span>
+        <h2 class="text-2xl font-bold text-gray-100">Technical Learning Pathway</h2>
       </div>
 
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-        
-        <!-- Stage 1 -->
-        <div class="bento-card p-6 flex flex-col justify-between">
-          <div class="space-y-4">
-            <div class="flex justify-between items-center text-xs font-mono">
-              <span class="text-blue-400 font-bold">STAGE 01</span>
-              <span class="px-2.5 py-0.5 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 font-semibold">Completed</span>
-            </div>
-            
-            <h3 class="text-lg font-bold text-gray-100">Data Wrangling &amp; Foundations</h3>
-            
-            <!-- What I Learned Subsection -->
-            <div class="space-y-2 pt-1 border-t border-gray-800/80">
-              <span class="text-[11px] font-mono uppercase text-gray-500 font-semibold">What I Learned:</span>
-              <ul class="text-xs text-gray-300 space-y-1.5">
-                <li class="flex items-start space-x-2">
-                  <i class="fa-solid fa-check text-emerald-400 text-[10px] mt-0.5"></i>
-                  <span>Complex SQL joins, aggregation, and relational schema querying.</span>
-                </li>
-                <li class="flex items-start space-x-2">
-                  <i class="fa-solid fa-check text-emerald-400 text-[10px] mt-0.5"></i>
-                  <span>Handling missing value imputation &amp; outlier filtering with Pandas.</span>
-                </li>
-                <li class="flex items-start space-x-2">
-                  <i class="fa-solid fa-check text-emerald-400 text-[10px] mt-0.5"></i>
-                  <span>Git version control workflows and repository synchronization.</span>
-                </li>
-              </ul>
-            </div>
+      <div class="relative border-l-2 border-gray-800 ml-4 md:ml-8 pl-6 md:pl-10 space-y-10">
+
+        <div class="relative group">
+          <div class="absolute -left-[31px] md:-left-[47px] top-0 w-6 h-6 rounded-full bg-gray-900 border-2 border-blue-500 flex items-center justify-center">
+            <span class="w-2 h-2 rounded-full bg-blue-400"></span>
           </div>
 
-          <div class="flex flex-wrap gap-1.5 pt-6">
-            <span class="text-[10px] font-mono bg-gray-900 border border-gray-800 text-gray-300 px-2 py-1 rounded">Python</span>
-            <span class="text-[10px] font-mono bg-gray-900 border border-gray-800 text-gray-300 px-2 py-1 rounded">Pandas</span>
-            <span class="text-[10px] font-mono bg-gray-900 border border-gray-800 text-gray-300 px-2 py-1 rounded">SQL</span>
-            <span class="text-[10px] font-mono bg-gray-900 border border-gray-800 text-gray-300 px-2 py-1 rounded">Git</span>
-          </div>
-        </div>
-
-        <!-- Stage 2 -->
-        <div class="bento-card p-6 flex flex-col justify-between">
-          <div class="space-y-4">
-            <div class="flex justify-between items-center text-xs font-mono">
-              <span class="text-blue-400 font-bold">STAGE 02</span>
-              <span class="px-2.5 py-0.5 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 font-semibold">Completed</span>
+          <div class="bento-card p-6 md:p-8 space-y-4">
+            <div class="flex flex-wrap items-center justify-between gap-2 border-b border-gray-800/80 pb-3">
+              <div>
+                <span class="text-xs font-mono text-blue-400 font-bold">STAGE 01</span>
+                <h3 class="text-lg font-bold text-gray-100">Core Foundations &amp; Data Wrangling</h3>
+              </div>
+              <span class="px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 text-xs font-mono font-semibold">Completed</span>
             </div>
-            
-            <h3 class="text-lg font-bold text-gray-100">Modeling &amp; Statistical Analysis</h3>
-            
-            <!-- What I Learned Subsection -->
-            <div class="space-y-2 pt-1 border-t border-gray-800/80">
-              <span class="text-[11px] font-mono uppercase text-gray-500 font-semibold">What I Learned:</span>
-              <ul class="text-xs text-gray-300 space-y-1.5">
-                <li class="flex items-start space-x-2">
-                  <i class="fa-solid fa-check text-emerald-400 text-[10px] mt-0.5"></i>
-                  <span>Classification algorithms (Random Forest, Logistic Regression).</span>
-                </li>
-                <li class="flex items-start space-x-2">
-                  <i class="fa-solid fa-check text-emerald-400 text-[10px] mt-0.5"></i>
-                  <span>Evaluating ROC-AUC, Precision/Recall, and confusion matrices.</span>
-                </li>
-                <li class="flex items-start space-x-2">
-                  <i class="fa-solid fa-check text-emerald-400 text-[10px] mt-0.5"></i>
-                  <span>Exploratory visual analytics using Seaborn &amp; Matplotlib.</span>
-                </li>
-              </ul>
-            </div>
-          </div>
 
-          <div class="flex flex-wrap gap-1.5 pt-6">
-            <span class="text-[10px] font-mono bg-gray-900 border border-gray-800 text-gray-300 px-2 py-1 rounded">Scikit-Learn</span>
-            <span class="text-[10px] font-mono bg-gray-900 border border-gray-800 text-gray-300 px-2 py-1 rounded">NumPy</span>
-            <span class="text-[10px] font-mono bg-gray-900 border border-gray-800 text-gray-300 px-2 py-1 rounded">Seaborn</span>
+            <p class="text-gray-400 text-xs sm:text-sm leading-relaxed">
+              Established foundational data engineering skills. Focused on cleansing raw datasets, writing optimized relational SQL queries, and executing structured data manipulation.
+            </p>
+
+            <div class="space-y-2 pt-2">
+              <span class="text-[11px] font-mono uppercase text-gray-500 font-semibold block">Key Outcomes:</span>
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs text-gray-300">
+                <div class="flex items-center space-x-2">
+                  <i class="fa-solid fa-check text-emerald-400 text-xs"></i>
+                  <span>Relational Schema Queries &amp; Joins</span>
+                </div>
+                <div class="flex items-center space-x-2">
+                  <i class="fa-solid fa-check text-emerald-400 text-xs"></i>
+                  <span>Pandas Data Cleansing &amp; Imputation</span>
+                </div>
+                <div class="flex items-center space-x-2">
+                  <i class="fa-solid fa-check text-emerald-400 text-xs"></i>
+                  <span>Git Version Control &amp; GitHub Sync</span>
+                </div>
+                <div class="flex items-center space-x-2">
+                  <i class="fa-solid fa-check text-emerald-400 text-xs"></i>
+                  <span>Exploratory Data Structuring</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="flex flex-wrap gap-2 pt-2">
+              <span class="text-[10px] font-mono bg-gray-900 border border-gray-800 text-gray-300 px-2.5 py-1 rounded-md">Python</span>
+              <span class="text-[10px] font-mono bg-gray-900 border border-gray-800 text-gray-300 px-2.5 py-1 rounded-md">Pandas</span>
+              <span class="text-[10px] font-mono bg-gray-900 border border-gray-800 text-gray-300 px-2.5 py-1 rounded-md">SQL</span>
+              <span class="text-[10px] font-mono bg-gray-900 border border-gray-800 text-gray-300 px-2.5 py-1 rounded-md">Git</span>
+            </div>
           </div>
         </div>
 
-        <!-- Stage 3 -->
-        <div class="bento-card p-6 flex flex-col justify-between">
-          <div class="space-y-4">
-            <div class="flex justify-between items-center text-xs font-mono">
-              <span class="text-amber-400 font-bold">STAGE 03</span>
-              <span class="px-2.5 py-0.5 rounded-full bg-amber-500/10 border border-amber-500/30 text-amber-400 font-semibold">In Progress</span>
-            </div>
-            
-            <h3 class="text-lg font-bold text-gray-100">Cloud &amp; MLOps Deployment</h3>
-            
-            <!-- What I Learned Subsection -->
-            <div class="space-y-2 pt-1 border-t border-gray-800/80">
-              <span class="text-[11px] font-mono uppercase text-gray-500 font-semibold">Current Objectives:</span>
-              <ul class="text-xs text-gray-300 space-y-1.5">
-                <li class="flex items-start space-x-2">
-                  <i class="fa-solid fa-spinner text-amber-400 text-[10px] mt-0.5 animate-spin"></i>
-                  <span>Building interactive business dashboards in Power BI.</span>
-                </li>
-                <li class="flex items-start space-x-2">
-                  <i class="fa-solid fa-spinner text-amber-400 text-[10px] mt-0.5 animate-spin"></i>
-                  <span>Containerizing models with Docker for API deployments.</span>
-                </li>
-                <li class="flex items-start space-x-2">
-                  <i class="fa-solid fa-spinner text-amber-400 text-[10px] mt-0.5 animate-spin"></i>
-                  <span>Deploying data pipelines on cloud infrastructure (AWS/Snowflake).</span>
-                </li>
-              </ul>
-            </div>
+        <div class="relative group">
+          <div class="absolute -left-[31px] md:-left-[47px] top-0 w-6 h-6 rounded-full bg-gray-900 border-2 border-emerald-500 flex items-center justify-center">
+            <span class="w-2 h-2 rounded-full bg-emerald-400"></span>
           </div>
 
-          <div class="flex flex-wrap gap-1.5 pt-6">
-            <span class="text-[10px] font-mono bg-gray-900 border border-gray-800 text-gray-300 px-2 py-1 rounded">Power BI</span>
-            <span class="text-[10px] font-mono bg-gray-900 border border-gray-800 text-gray-300 px-2 py-1 rounded">Docker</span>
-            <span class="text-[10px] font-mono bg-gray-900 border border-gray-800 text-gray-300 px-2 py-1 rounded">AWS</span>
+          <div class="bento-card p-6 md:p-8 space-y-4">
+            <div class="flex flex-wrap items-center justify-between gap-2 border-b border-gray-800/80 pb-3">
+              <div>
+                <span class="text-xs font-mono text-emerald-400 font-bold">STAGE 02</span>
+                <h3 class="text-lg font-bold text-gray-100">Predictive Modeling &amp; Statistical EDA</h3>
+              </div>
+              <span class="px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 text-xs font-mono font-semibold">Completed</span>
+            </div>
+
+            <p class="text-gray-400 text-xs sm:text-sm leading-relaxed">
+              Built end-to-end classification algorithms and visual analytics tools. Conducted feature evaluation and statistical hypothesis testing to identify primary metrics.
+            </p>
+
+            <div class="space-y-2 pt-2">
+              <span class="text-[11px] font-mono uppercase text-gray-500 font-semibold block">Key Outcomes:</span>
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs text-gray-300">
+                <div class="flex items-center space-x-2">
+                  <i class="fa-solid fa-check text-emerald-400 text-xs"></i>
+                  <span>Random Forest Classification Pipelines</span>
+                </div>
+                <div class="flex items-center space-x-2">
+                  <i class="fa-solid fa-check text-emerald-400 text-xs"></i>
+                  <span>ROC-AUC &amp; Precision/Recall Analysis</span>
+                </div>
+                <div class="flex items-center space-x-2">
+                  <i class="fa-solid fa-check text-emerald-400 text-xs"></i>
+                  <span>Visualizations with Matplotlib &amp; Seaborn</span>
+                </div>
+                <div class="flex items-center space-x-2">
+                  <i class="fa-solid fa-check text-emerald-400 text-xs"></i>
+                  <span>Cross-Validation &amp; Model Optimization</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="flex flex-wrap gap-2 pt-2">
+              <span class="text-[10px] font-mono bg-gray-900 border border-gray-800 text-gray-300 px-2.5 py-1 rounded-md">Scikit-Learn</span>
+              <span class="text-[10px] font-mono bg-gray-900 border border-gray-800 text-gray-300 px-2.5 py-1 rounded-md">Matplotlib</span>
+              <span class="text-[10px] font-mono bg-gray-900 border border-gray-800 text-gray-300 px-2.5 py-1 rounded-md">Seaborn</span>
+              <span class="text-[10px] font-mono bg-gray-900 border border-gray-800 text-gray-300 px-2.5 py-1 rounded-md">NumPy</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="relative group">
+          <div class="absolute -left-[31px] md:-left-[47px] top-0 w-6 h-6 rounded-full bg-gray-900 border-2 border-amber-500 flex items-center justify-center">
+            <span class="w-2 h-2 rounded-full bg-amber-400 animate-ping"></span>
+          </div>
+
+          <div class="bento-card p-6 md:p-8 space-y-4">
+            <div class="flex flex-wrap items-center justify-between gap-2 border-b border-gray-800/80 pb-3">
+              <div>
+                <span class="text-xs font-mono text-amber-400 font-bold">STAGE 03</span>
+                <h3 class="text-lg font-bold text-gray-100">Cloud Warehousing &amp; Business Dashboards</h3>
+              </div>
+              <span class="px-3 py-1 rounded-full bg-amber-500/10 border border-amber-500/30 text-amber-400 text-xs font-mono font-semibold">In Progress</span>
+            </div>
+
+            <p class="text-gray-400 text-xs sm:text-sm leading-relaxed">
+              Expanding technical scope into production deployment, automated cloud ETL pipelines, interactive business reporting dashboards, and containerized model APIs.
+            </p>
+
+            <div class="space-y-2 pt-2">
+              <span class="text-[11px] font-mono uppercase text-gray-500 font-semibold block">Current Targets:</span>
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs text-gray-300">
+                <div class="flex items-center space-x-2">
+                  <i class="fa-solid fa-spinner text-amber-400 text-xs animate-spin"></i>
+                  <span>Power BI Interactive Dashboarding</span>
+                </div>
+                <div class="flex items-center space-x-2">
+                  <i class="fa-solid fa-spinner text-amber-400 text-xs animate-spin"></i>
+                  <span>Docker Model Containerization</span>
+                </div>
+                <div class="flex items-center space-x-2">
+                  <i class="fa-solid fa-spinner text-amber-400 text-xs animate-spin"></i>
+                  <span>Cloud Data Warehousing (AWS / Snowflake)</span>
+                </div>
+                <div class="flex items-center space-x-2">
+                  <i class="fa-solid fa-spinner text-amber-400 text-xs animate-spin"></i>
+                  <span>Automated Machine Learning Pipelines</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="flex flex-wrap gap-2 pt-2">
+              <span class="text-[10px] font-mono bg-gray-900 border border-gray-800 text-gray-300 px-2.5 py-1 rounded-md">Power BI</span>
+              <span class="text-[10px] font-mono bg-gray-900 border border-gray-800 text-gray-300 px-2.5 py-1 rounded-md">AWS</span>
+              <span class="text-[10px] font-mono bg-gray-900 border border-gray-800 text-gray-300 px-2.5 py-1 rounded-md">Docker</span>
+            </div>
           </div>
         </div>
 
       </div>
     </section>
 
-    <!-- FEATURED PROJECTS -->
     <section class="space-y-6 pt-4" id="projects">
       <div>
         <span class="text-xs font-mono uppercase tracking-widest text-blue-400 font-bold">Execution</span>
@@ -328,7 +344,6 @@
 
       <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
 
-        <!-- Project 1: Bank Marketing ML -->
         <div class="bento-card p-8 flex flex-col justify-between">
           <div class="space-y-4">
             <div class="flex justify-between items-center">
@@ -371,7 +386,6 @@
           </div>
         </div>
 
-        <!-- Project 2: Google Play Store -->
         <div class="bento-card p-8 flex flex-col justify-between">
           <div class="space-y-4">
             <div class="flex justify-between items-center">
@@ -417,78 +431,62 @@
       </div>
     </section>
 
-    <!-- TECHNICAL STACK WITH ACTUAL VECTOR LOGOS -->
     <section class="space-y-6 pt-4" id="stack">
       <div>
         <span class="text-xs font-mono uppercase tracking-widest text-blue-400 font-bold">Ecosystem</span>
         <h2 class="text-2xl font-bold text-gray-100">Technological Stack</h2>
       </div>
 
-      <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4">
+      <div class="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-8 gap-4">
         
-        <!-- Python -->
-        <div class="bento-card p-5 text-center flex flex-col items-center justify-center space-y-3">
-          <svg class="w-8 h-8" viewBox="0 0 128 128"><path fill="#3776AB" d="M63.1 10.3c-28 0-26.3 12.1-26.3 12.1l.1 12.6h26.8v3.8H26.3S10 36.9 10 65.2c0 28.3 14.3 27.3 14.3 27.3h8.5V80.3s-.5-14.3 14.1-14.3h24.4s13.6.2 13.6-13.2V23.5s1.7-13.2-21.8-13.2zm-12.7 8.2c2.5 0 4.5 2 4.5 4.5s-2 4.5-4.5 4.5-4.5-2-4.5-4.5 2-4.5 4.5-4.5z"/><path fill="#FFD43B" d="M64.9 117.7c28 0 26.3-12.1 26.3-12.1l-.1-12.6H64.3v-3.8h37.4s16.3 1.9 16.3-26.4c0-28.3-14.3-27.3-14.3-27.3h-8.5v12.2s.5 14.3-14.1 14.3H66.7s-13.6-.2-13.6 13.2v28.9s-1.7 13.2 21.8 13.2zm12.7-8.2c-2.5 0-4.5-2-4.5-4.5s2-4.5 4.5-4.5 4.5 2 4.5 4.5-2 4.5-4.5 4.5z"/></svg>
-          <div>
-            <span class="text-xs font-bold text-gray-200 block">Python</span>
-            <span class="text-[10px] font-mono text-gray-500">Core Language</span>
-          </div>
+        <div class="bento-card p-4 text-center flex flex-col items-center justify-center space-y-2">
+          <svg class="w-7 h-7" viewBox="0 0 128 128"><path fill="#3776AB" d="M63.1 10.3c-28 0-26.3 12.1-26.3 12.1l.1 12.6h26.8v3.8H26.3S10 36.9 10 65.2c0 28.3 14.3 27.3 14.3 27.3h8.5V80.3s-.5-14.3 14.1-14.3h24.4s13.6.2 13.6-13.2V23.5s1.7-13.2-21.8-13.2zm-12.7 8.2c2.5 0 4.5 2 4.5 4.5s-2 4.5-4.5 4.5-4.5-2-4.5-4.5 2-4.5 4.5-4.5z"/><path fill="#FFD43B" d="M64.9 117.7c28 0 26.3-12.1 26.3-12.1l-.1-12.6H64.3v-3.8h37.4s16.3 1.9 16.3-26.4c0-28.3-14.3-27.3-14.3-27.3h-8.5v12.2s.5 14.3-14.1 14.3H66.7s-13.6-.2-13.6 13.2v28.9s-1.7 13.2 21.8 13.2zm12.7-8.2c-2.5 0-4.5-2-4.5-4.5s2-4.5 4.5-4.5 4.5 2 4.5 4.5-2 4.5-4.5 4.5z"/></svg>
+          <span class="text-xs font-bold text-gray-200">Python</span>
         </div>
 
-        <!-- Pandas -->
-        <div class="bento-card p-5 text-center flex flex-col items-center justify-center space-y-3">
-          <svg class="w-8 h-8" viewBox="0 0 128 128"><path fill="#150458" d="M37.3 17.5h16.2v93H37.3z"/><path fill="#E70488" d="M74.5 17.5h16.2v93H74.5z"/><path fill="#00C1D4" d="M55.2 41.5h17.6v45H55.2z"/></svg>
-          <div>
-            <span class="text-xs font-bold text-gray-200 block">Pandas</span>
-            <span class="text-[10px] font-mono text-gray-500">Data Wrangling</span>
-          </div>
+        <div class="bento-card p-4 text-center flex flex-col items-center justify-center space-y-2">
+          <svg class="w-7 h-7" viewBox="0 0 128 128"><path fill="#150458" d="M37.3 17.5h16.2v93H37.3z"/><path fill="#E70488" d="M74.5 17.5h16.2v93H74.5z"/><path fill="#00C1D4" d="M55.2 41.5h17.6v45H55.2z"/></svg>
+          <span class="text-xs font-bold text-gray-200">Pandas</span>
         </div>
 
-        <!-- NumPy -->
-        <div class="bento-card p-5 text-center flex flex-col items-center justify-center space-y-3">
-          <svg class="w-8 h-8" viewBox="0 0 128 128"><path fill="#013243" d="M64 12l45 26v52L64 116 19 90V38l45-26z"/><path fill="#4DABCF" d="M64 22L28 43v42l36 21 36-21V43L64 22z"/></svg>
-          <div>
-            <span class="text-xs font-bold text-gray-200 block">NumPy</span>
-            <span class="text-[10px] font-mono text-gray-500">Math Compute</span>
-          </div>
+        <div class="bento-card p-4 text-center flex flex-col items-center justify-center space-y-2">
+          <svg class="w-7 h-7" viewBox="0 0 128 128"><path fill="#013243" d="M64 12l45 26v52L64 116 19 90V38l45-26z"/><path fill="#4DABCF" d="M64 22L28 43v42l36 21 36-21V43L64 22z"/></svg>
+          <span class="text-xs font-bold text-gray-200">NumPy</span>
         </div>
 
-        <!-- Scikit-Learn -->
-        <div class="bento-card p-5 text-center flex flex-col items-center justify-center space-y-3">
-          <svg class="w-8 h-8" viewBox="0 0 128 128"><path fill="#F7931E" d="M64 16L16 64l48 48 48-48L64 16z"/><circle fill="#3499CC" cx="64" cy="64" r="20"/></svg>
-          <div>
-            <span class="text-xs font-bold text-gray-200 block">Scikit-Learn</span>
-            <span class="text-[10px] font-mono text-gray-500">Machine Learning</span>
-          </div>
+        <div class="bento-card p-4 text-center flex flex-col items-center justify-center space-y-2">
+          <svg class="w-7 h-7" viewBox="0 0 128 128"><path fill="#F7931E" d="M64 16L16 64l48 48 48-48L64 16z"/><circle fill="#3499CC" cx="64" cy="64" r="20"/></svg>
+          <span class="text-xs font-bold text-gray-200">Scikit-Learn</span>
         </div>
 
-        <!-- SQL -->
-        <div class="bento-card p-5 text-center flex flex-col items-center justify-center space-y-3">
-          <i class="fa-solid fa-database text-3xl text-emerald-400"></i>
-          <div>
-            <span class="text-xs font-bold text-gray-200 block">SQL</span>
-            <span class="text-[10px] font-mono text-gray-500">Relational Queries</span>
-          </div>
+        <div class="bento-card p-4 text-center flex flex-col items-center justify-center space-y-2">
+          <i class="fa-solid fa-chart-line text-2xl text-cyan-400"></i>
+          <span class="text-xs font-bold text-gray-200">Matplotlib</span>
         </div>
 
-        <!-- Git -->
-        <div class="bento-card p-5 text-center flex flex-col items-center justify-center space-y-3">
-          <i class="fa-brands fa-git-alt text-3xl text-red-500"></i>
-          <div>
-            <span class="text-xs font-bold text-gray-200 block">Git &amp; GitHub</span>
-            <span class="text-[10px] font-mono text-gray-500">Version Control</span>
-          </div>
+        <div class="bento-card p-4 text-center flex flex-col items-center justify-center space-y-2">
+          <i class="fa-solid fa-chart-area text-2xl text-indigo-400"></i>
+          <span class="text-xs font-bold text-gray-200">Seaborn</span>
+        </div>
+
+        <div class="bento-card p-4 text-center flex flex-col items-center justify-center space-y-2">
+          <i class="fa-solid fa-database text-2xl text-emerald-400"></i>
+          <span class="text-xs font-bold text-gray-200">SQL</span>
+        </div>
+
+        <div class="bento-card p-4 text-center flex flex-col items-center justify-center space-y-2">
+          <i class="fa-brands fa-git-alt text-2xl text-red-500"></i>
+          <span class="text-xs font-bold text-gray-200">Git / GitHub</span>
         </div>
 
       </div>
     </section>
 
-    <!-- CONTACT (CLEAN NO RAW EMAIL STRING) -->
     <section class="bento-card p-8 sm:p-10 text-center space-y-6 relative overflow-hidden" id="contact">
       <div class="max-w-xl mx-auto space-y-4">
         <h2 class="text-2xl sm:text-3xl font-extrabold text-gray-100">Get In Touch</h2>
         <p class="text-gray-400 text-sm leading-relaxed">
-          Open to machine learning, data science, and analytical roles. Feel free to reach out directly via email or connect on LinkedIn.
+          Seeking opportunities in machine learning, data science, or analytical roles. Reach out directly via email or LinkedIn.
         </p>
 
         <div class="flex flex-wrap justify-center gap-4 pt-2">
@@ -510,11 +508,13 @@
     &copy; 2026 Harish Senthilkumar — Data Science &amp; Machine Learning
   </footer>
 
-  <!-- Code Tab Switcher Engine & Automated Virtual Cursor Script -->
   <script>
     const tabs = {
       pipeline: `
-        <p class="text-gray-500"># Initializing Machine Learning Workflow</p>
+        <div class="flex items-center justify-between border-b border-gray-800/80 pb-2 mb-2">
+          <span class="text-gray-500"># Initializing Machine Learning Workflow</span>
+          <span class="text-[10px] text-blue-400 bg-blue-500/10 px-2 py-0.5 rounded">Active Pipeline</span>
+        </div>
         <p><span class="text-blue-400">import</span> pandas <span class="text-blue-400">as</span> pd</p>
         <p><span class="text-blue-400">from</span> sklearn.ensemble <span class="text-blue-400">import</span> RandomForestClassifier</p>
         <div class="pt-2 border-t border-gray-800/80 space-y-1">
@@ -522,21 +522,36 @@
           <p class="text-emerald-400">✓ Accuracy Score: 90.1%</p>
           <p class="text-cyan-400">✓ ROC-AUC Metric: 0.928</p>
         </div>
-        <div class="bg-gray-900 p-3 rounded-lg border border-gray-800 text-[11px] text-gray-400 mt-2">
-          <span class="text-amber-400 font-semibold">Key Finding:</span> Call duration &gt; 300s increases deposit conversion by <span class="text-blue-400 font-bold">4.3x</span>.
+        <div class="bg-gray-900 p-3 rounded-lg border border-gray-800 text-[11px] text-gray-400 mt-2 flex items-center space-x-3">
+          <div class="w-8 h-8 rounded bg-blue-500/20 border border-blue-500/30 flex items-center justify-center flex-shrink-0">
+            <i class="fa-solid fa-chart-radar text-blue-400 animate-pulse text-sm"></i>
+          </div>
+          <div>
+            <span class="text-amber-400 font-semibold block">Key Finding:</span>
+            <span>Call duration &gt; 300s increases deposit conversion by <span class="text-blue-400 font-bold">4.3x</span>.</span>
+          </div>
         </div>
       `,
       eda: `
-        <p class="text-gray-500"># Google Play Store Exploratory Analysis</p>
+        <div class="flex items-center justify-between border-b border-gray-800/80 pb-2 mb-2">
+          <span class="text-gray-500"># Google Play Store Exploratory Analysis</span>
+          <span class="text-[10px] text-emerald-400 bg-emerald-500/10 px-2 py-0.5 rounded">Active EDA</span>
+        </div>
         <p><span class="text-blue-400">import</span> seaborn <span class="text-blue-400">as</span> sns</p>
         <p><span class="text-blue-400">import</span> matplotlib.pyplot <span class="text-blue-400">as</span> plt</p>
         <div class="pt-2 border-t border-gray-800/80 space-y-1">
           <p class="text-emerald-400">✓ Cleaned Listings: 10,841 apps</p>
-          <p class="text-cyan-400">✓ Size vs Rating Correlation: 0.066 (Low correlation)</p>
+          <p class="text-cyan-400">✓ Size vs Rating Correlation: 0.066</p>
           <p class="text-purple-400">✓ Paid App Rating Avg: 4.27</p>
         </div>
-        <div class="bg-gray-900 p-3 rounded-lg border border-gray-800 text-[11px] text-gray-400 mt-2">
-          <span class="text-amber-400 font-semibold">Market Insight:</span> Teen-rated applications show <span class="text-emerald-400 font-bold">3x higher install volumes</span>.
+        <div class="bg-gray-900 p-3 rounded-lg border border-gray-800 text-[11px] text-gray-400 mt-2 flex items-center space-x-3">
+          <div class="w-8 h-8 rounded bg-emerald-500/20 border border-emerald-500/30 flex items-center justify-center flex-shrink-0">
+            <i class="fa-solid fa-wave-square text-emerald-400 animate-pulse text-sm"></i>
+          </div>
+          <div>
+            <span class="text-amber-400 font-semibold block">Market Insight:</span>
+            <span>Teen-rated applications show <span class="text-emerald-400 font-bold">3x higher install volumes</span>.</span>
+          </div>
         </div>
       `
     };
@@ -547,10 +562,9 @@
       document.getElementById(`tab-${tabKey}`).classList.add('active');
     }
 
-    // Initialize Default View
     switchTab('pipeline');
 
-    // Automated Cursor Navigation Simulation
+    // Automated Virtual Cursor Navigation
     let currentTab = 'pipeline';
     const cursor = document.getElementById('virtual-cursor');
 
@@ -561,20 +575,17 @@
       const btnRect = targetBtn.getBoundingClientRect();
       const parentRect = targetBtn.closest('.relative').getBoundingClientRect();
 
-      // Move virtual cursor over the target tab button
       const targetX = (btnRect.left - parentRect.left) + 20;
       const targetY = (btnRect.top - parentRect.top) + 10;
 
       cursor.style.transform = `translate(${targetX}px, ${targetY}px)`;
 
-      // Trigger tab change after cursor moves into place
       setTimeout(() => {
         currentTab = currentTab === 'pipeline' ? 'eda' : 'pipeline';
         switchTab(currentTab);
       }, 900);
     }
 
-    // Run auto-switcher every 4 seconds
     setInterval(autoCycleTabs, 4000);
   </script>
 
