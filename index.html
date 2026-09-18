@@ -463,10 +463,10 @@
             <div class="flex space-x-2 text-xs font-mono text-gray-400">
               <span>Data Ethics</span> • <span>ML Auditing</span>
             </div>
-            <a href="./data-ethics-case-study.pdf" target="_blank" class="text-xs font-mono font-bold text-blue-400 hover:text-blue-300 flex items-center space-x-1.5 bg-blue-600/10 hover:bg-blue-600/20 border border-blue-500/30 px-3 py-1.5 rounded-lg transition-all">
+            <button onclick="openModal()" class="text-xs font-mono font-bold text-blue-400 hover:text-blue-300 flex items-center space-x-1.5 bg-blue-600/10 hover:bg-blue-600/20 border border-blue-500/30 px-3 py-1.5 rounded-lg transition-all">
               <i class="fa-solid fa-file-pdf text-red-400"></i>
-              <span>Read Case Study</span>
-            </a>
+              <span>Preview PDF</span>
+            </button>
           </div>
         </div>
 
@@ -550,7 +550,47 @@
     &copy; 2026 Harish Senthilkumar — Data Science &amp; Machine Learning
   </footer>
 
+  <div id="pdf-modal" class="fixed inset-0 z-50 bg-black/80 backdrop-blur-sm hidden flex items-center justify-center p-4">
+    <div class="bg-gray-900 border border-gray-800 rounded-2xl w-full max-w-5xl h-[85vh] flex flex-col overflow-hidden shadow-2xl relative">
+      
+      <div class="px-6 py-4 bg-gray-950 border-b border-gray-800 flex items-center justify-between">
+        <div class="flex items-center space-x-3">
+          <i class="fa-solid fa-file-pdf text-red-400 text-lg"></i>
+          <span class="font-bold text-gray-100 text-sm font-mono">PDF Preview — Data Ethics Case Study</span>
+        </div>
+        <div class="flex items-center space-x-3">
+          <a href="data-ethics-case-study.pdf" target="_blank" class="text-xs font-mono text-blue-400 hover:text-blue-300 flex items-center space-x-1 border border-blue-500/30 bg-blue-500/10 px-3 py-1 rounded-lg">
+            <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
+            <span>Open in New Tab</span>
+          </a>
+          <button onclick="closeModal()" class="text-gray-400 hover:text-white text-lg px-2 py-1 rounded-lg hover:bg-gray-800 transition-all">
+            <i class="fa-solid fa-xmark"></i>
+          </button>
+        </div>
+      </div>
+
+      <div class="w-full flex-grow bg-gray-950">
+        <iframe src="data-ethics-case-study.pdf" class="w-full h-full border-0"></iframe>
+      </div>
+
+      <div class="px-6 py-3 bg-gray-950 border-t border-gray-800 flex justify-end">
+        <button onclick="closeModal()" class="px-4 py-2 rounded-lg bg-gray-800 hover:bg-gray-700 text-gray-300 text-xs font-mono">Close Preview</button>
+      </div>
+
+    </div>
+  </div>
+
   <script>
+    function openModal() {
+      document.getElementById('pdf-modal').classList.remove('hidden');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeModal() {
+      document.getElementById('pdf-modal').classList.add('hidden');
+      document.body.style.overflow = 'auto';
+    }
+
     const tabs = {
       pipeline: `
         <div class="flex items-center justify-between border-b border-gray-800/80 pb-2 mb-2">
