@@ -342,7 +342,7 @@
         <h2 class="text-2xl font-bold text-gray-100">Featured Machine Learning Projects</h2>
       </div>
 
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
 
         <div class="bento-card p-8 flex flex-col justify-between">
           <div class="space-y-4">
@@ -428,6 +428,48 @@
           </div>
         </div>
 
+        <div class="bento-card p-8 flex flex-col justify-between">
+          <div class="space-y-4">
+            <div class="flex justify-between items-center">
+              <span class="px-3 py-1 rounded-full text-xs font-mono bg-purple-500/10 text-purple-400 border border-purple-500/20">Data Ethics &amp; AI</span>
+              <a href="https://github.com/Harish-Senthilkumar" target="_blank" class="text-gray-400 hover:text-white transition-colors">
+                <i class="fa-brands fa-github text-lg"></i>
+              </a>
+            </div>
+
+            <h3 class="text-xl font-bold text-gray-100">Historical Bias in Automated Recruitment</h3>
+            
+            <p class="text-gray-400 text-sm leading-relaxed">
+              Authored an ethical evaluation of machine learning hiring models, analyzing proxy variable leakage, representation bias, and human-in-the-loop safeguards.
+            </p>
+
+            <div class="grid grid-cols-3 gap-2 bg-gray-900/90 p-3 rounded-xl border border-gray-800 text-center font-mono">
+              <div>
+                <div class="text-[10px] text-gray-500">FRAMEWORK</div>
+                <div class="text-sm font-bold text-purple-400">Deon Ethics</div>
+              </div>
+              <div>
+                <div class="text-[10px] text-gray-500">LICENSE</div>
+                <div class="text-sm font-bold text-blue-400">CC BY-ND</div>
+              </div>
+              <div>
+                <div class="text-[10px] text-gray-500">SAFEGUARDS</div>
+                <div class="text-sm font-bold text-emerald-400">Audit EDA</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="pt-6 mt-6 border-t border-gray-800 flex items-center justify-between">
+            <div class="flex space-x-2 text-xs font-mono text-gray-400">
+              <span>Data Ethics</span> • <span>ML Auditing</span>
+            </div>
+            <button onclick="openPdfModal()" class="text-xs font-mono font-bold text-blue-400 hover:text-blue-300 flex items-center space-x-1.5 bg-blue-600/10 hover:bg-blue-600/20 border border-blue-500/30 px-3 py-1.5 rounded-lg transition-all">
+              <i class="fa-solid fa-file-pdf text-red-400"></i>
+              <span>Read Case Study</span>
+            </button>
+          </div>
+        </div>
+
       </div>
     </section>
 
@@ -508,7 +550,45 @@
     &copy; 2026 Harish Senthilkumar — Data Science &amp; Machine Learning
   </footer>
 
+  <div id="pdf-modal" class="fixed inset-0 z-50 bg-black/80 backdrop-blur-sm hidden flex items-center justify-center p-4">
+    <div class="bg-gray-900 border border-gray-800 rounded-2xl w-full max-w-5xl h-[85vh] flex flex-col overflow-hidden shadow-2xl relative">
+      <div class="px-6 py-4 bg-gray-950 border-b border-gray-800 flex items-center justify-between">
+        <div class="flex items-center space-x-3">
+          <i class="fa-solid fa-file-pdf text-red-400 text-lg"></i>
+          <span class="font-bold text-gray-100 text-sm font-mono">Data Ethics Case Study — Automated Recruitment</span>
+        </div>
+        <div class="flex items-center space-x-3">
+          <a href="case_study.pdf" download class="text-xs font-mono text-gray-400 hover:text-white flex items-center space-x-1.5 px-3 py-1.5 rounded-lg bg-gray-800 hover:bg-gray-700 transition-all">
+            <i class="fa-solid fa-download"></i>
+            <span class="hidden sm:inline">Download</span>
+          </a>
+          <a href="case_study.pdf" target="_blank" class="text-xs font-mono text-gray-400 hover:text-white flex items-center space-x-1.5 px-3 py-1.5 rounded-lg bg-gray-800 hover:bg-gray-700 transition-all">
+            <i class="fa-solid fa-arrow-up-right-from-square"></i>
+            <span class="hidden sm:inline">Full Screen</span>
+          </a>
+          <button onclick="closePdfModal()" class="text-gray-400 hover:text-white text-lg px-2 py-1 rounded-lg hover:bg-gray-800 transition-all">
+            <i class="fa-solid fa-xmark"></i>
+          </button>
+        </div>
+      </div>
+
+      <div class="flex-grow bg-gray-950 p-2">
+        <iframe src="case_study.pdf" class="w-full h-full rounded-lg border-0" title="Data Ethics Case Study Document"></iframe>
+      </div>
+    </div>
+  </div>
+
   <script>
+    function openPdfModal() {
+      document.getElementById('pdf-modal').classList.remove('hidden');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closePdfModal() {
+      document.getElementById('pdf-modal').classList.add('hidden');
+      document.body.style.overflow = 'auto';
+    }
+
     const tabs = {
       pipeline: `
         <div class="flex items-center justify-between border-b border-gray-800/80 pb-2 mb-2">
