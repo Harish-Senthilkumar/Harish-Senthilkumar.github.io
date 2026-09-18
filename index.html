@@ -165,7 +165,7 @@
         </div>
 
         <div class="p-5 font-mono text-xs space-y-3 text-gray-300 leading-relaxed bg-gray-950/80 flex-grow relative overflow-hidden" id="terminal-content">
-          </div>
+        </div>
 
         <div class="bg-gray-950 px-4 py-2 border-t border-gray-800/80 text-[10px] font-mono text-gray-500 flex justify-between">
           <span>Python 3.11.4 • Scikit-Learn</span>
@@ -339,7 +339,7 @@
     <section class="space-y-6 pt-4" id="projects">
       <div>
         <span class="text-xs font-mono uppercase tracking-widest text-blue-400 font-bold">Execution</span>
-        <h2 class="text-2xl font-bold text-gray-100">Featured Machine Learning Projects</h2>
+        <h2 class="text-2xl font-bold text-gray-100">Featured Projects</h2>
       </div>
 
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -463,10 +463,10 @@
             <div class="flex space-x-2 text-xs font-mono text-gray-400">
               <span>Data Ethics</span> • <span>ML Auditing</span>
             </div>
-            <button onclick="openPdfModal()" class="text-xs font-mono font-bold text-blue-400 hover:text-blue-300 flex items-center space-x-1.5 bg-blue-600/10 hover:bg-blue-600/20 border border-blue-500/30 px-3 py-1.5 rounded-lg transition-all">
+            <a href="./data-ethics-case-study.pdf" target="_blank" class="text-xs font-mono font-bold text-blue-400 hover:text-blue-300 flex items-center space-x-1.5 bg-blue-600/10 hover:bg-blue-600/20 border border-blue-500/30 px-3 py-1.5 rounded-lg transition-all">
               <i class="fa-solid fa-file-pdf text-red-400"></i>
               <span>Read Case Study</span>
-            </button>
+            </a>
           </div>
         </div>
 
@@ -482,7 +482,7 @@
       <div class="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-8 gap-4">
         
         <div class="bento-card p-4 text-center flex flex-col items-center justify-center space-y-2">
-          <svg class="w-7 h-7" viewBox="0 0 128 128"><path fill="#3776AB" d="M63.1 10.3c-28 0-26.3 12.1-26.3 12.1l.1 12.6h26.8v3.8H26.3S10 36.9 10 65.2c0 28.3 14.3 27.3 14.3 27.3h8.5V80.3s-.5-14.3 14.1-14.3h24.4s13.6.2 13.6-13.2V23.5s1.7-13.2-21.8-13.2zm-12.7 8.2c2.5 0 4.5 2 4.5 4.5s-2 4.5-4.5 4.5-4.5-2-4.5-4.5 2-4.5 4.5-4.5z"/><path fill="#FFD43B" d="M64.9 117.7c28 0 26.3-12.1 26.3-12.1l-.1-12.6H64.3v-3.8h37.4s16.3 1.9 16.3-26.4c0-28.3-14.3-27.3-14.3-27.3h-8.5v12.2s.5 14.3-14.1 14.3H66.7s-13.6-.2-13.6 13.2v28.9s-1.7 13.2 21.8 13.2zm12.7-8.2c-2.5 0-4.5-2-4.5-4.5s2-4.5 4.5-4.5 4.5 2 4.5 4.5-2 4.5-4.5 4.5z"/></svg>
+          <svg class="w-7 h-7" viewBox="0 0 128 128"><path fill="#3776AB" d="M63.1 10.3c-28 0-26.3 12.1-26.3 12.1l.1 12.6h26.8v3.8H26.3S10 36.9 10 65.2c0 28.3 14.3 27.3 14.3 27.3h8.5V80.3s-.5-14.3 14.1-14.3h24.4s13.6.2 13.6-13.2V23.5s1.7-13.2-21.8-13.2zm-12.7 8.2c2.5 0 4.5 2 4.5 4.5s-2 4.5-4.5 4.5-4.5-2-4.5-4.5 2-4.5 4.5-4.5z"/><path fill="#FFD43B" d="M64.9 117.7c28 0 26.3-12.1 26.3-12.1l-.1-12.6H64.3v-3.8h37.4s16.3 1.9 16.3-26.4c0-28.3-14.3-27.3-14.3-27.3h-8.5v12.2s.5 14.3-14.1 14.3H66.7s-13.6-.2-13.6 13.2v28.9s-1.7 13.2 21.8 13.2zm12.7-8.2c-2.5 0-4.5-2-4.5-4.5s2-4.5 4.5-4.5 4.5 2 4.5 4.5-2 4.5-4.5-4.5z"/></svg>
           <span class="text-xs font-bold text-gray-200">Python</span>
         </div>
 
@@ -550,45 +550,7 @@
     &copy; 2026 Harish Senthilkumar — Data Science &amp; Machine Learning
   </footer>
 
-  <div id="pdf-modal" class="fixed inset-0 z-50 bg-black/80 backdrop-blur-sm hidden flex items-center justify-center p-4">
-    <div class="bg-gray-900 border border-gray-800 rounded-2xl w-full max-w-5xl h-[85vh] flex flex-col overflow-hidden shadow-2xl relative">
-      <div class="px-6 py-4 bg-gray-950 border-b border-gray-800 flex items-center justify-between">
-        <div class="flex items-center space-x-3">
-          <i class="fa-solid fa-file-pdf text-red-400 text-lg"></i>
-          <span class="font-bold text-gray-100 text-sm font-mono">Data Ethics Case Study — Automated Recruitment</span>
-        </div>
-        <div class="flex items-center space-x-3">
-          <a href="case_study.pdf" download class="text-xs font-mono text-gray-400 hover:text-white flex items-center space-x-1.5 px-3 py-1.5 rounded-lg bg-gray-800 hover:bg-gray-700 transition-all">
-            <i class="fa-solid fa-download"></i>
-            <span class="hidden sm:inline">Download</span>
-          </a>
-          <a href="case_study.pdf" target="_blank" class="text-xs font-mono text-gray-400 hover:text-white flex items-center space-x-1.5 px-3 py-1.5 rounded-lg bg-gray-800 hover:bg-gray-700 transition-all">
-            <i class="fa-solid fa-arrow-up-right-from-square"></i>
-            <span class="hidden sm:inline">Full Screen</span>
-          </a>
-          <button onclick="closePdfModal()" class="text-gray-400 hover:text-white text-lg px-2 py-1 rounded-lg hover:bg-gray-800 transition-all">
-            <i class="fa-solid fa-xmark"></i>
-          </button>
-        </div>
-      </div>
-
-      <div class="flex-grow bg-gray-950 p-2">
-        <iframe src="case_study.pdf" class="w-full h-full rounded-lg border-0" title="Data Ethics Case Study Document"></iframe>
-      </div>
-    </div>
-  </div>
-
   <script>
-    function openPdfModal() {
-      document.getElementById('pdf-modal').classList.remove('hidden');
-      document.body.style.overflow = 'hidden';
-    }
-
-    function closePdfModal() {
-      document.getElementById('pdf-modal').classList.add('hidden');
-      document.body.style.overflow = 'auto';
-    }
-
     const tabs = {
       pipeline: `
         <div class="flex items-center justify-between border-b border-gray-800/80 pb-2 mb-2">
@@ -644,7 +606,6 @@
 
     switchTab('pipeline');
 
-    // Automated Virtual Cursor Navigation
     let currentTab = 'pipeline';
     const cursor = document.getElementById('virtual-cursor');
 
